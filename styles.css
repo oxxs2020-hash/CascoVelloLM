@@ -1897,3 +1897,263 @@ footer::before {
     height: 280px;
   }
 }
+
+/* ============================================
+   SKIPER UI / MODERN 2026 UI/UX ENHANCEMENTS
+   ============================================ */
+
+/* 1. Spotlight Glow Effects */
+.card, .exp-card, .testimonial-card, .direct-link-card, .booking-mask, .distance-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after, .exp-card::after, .testimonial-card::after, .direct-link-card::after, .booking-mask::after, .distance-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(400px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(212, 168, 83, 0.12), transparent 40%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 4;
+}
+
+.card:hover::after, .exp-card:hover::after, .testimonial-card:hover::after, .direct-link-card:hover::after, .booking-mask:hover::after, .distance-item:hover::after {
+  opacity: 1;
+}
+
+/* 2. Shimmer on Luxury Badges */
+.badge-rating {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-rating::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent 20%, rgba(255, 255, 255, 0.25) 50%, transparent 80%);
+  transform: translateX(-100%);
+  animation: shimmerBadge 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes shimmerBadge {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  35% { transform: translateX(100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+/* 3. Interactive Gallery Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 8, 12, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 24, 32, 0.75);
+  border: 1px solid var(--border-hover);
+  color: var(--text);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav-btn.prev { left: 16px; }
+.lightbox-nav-btn.next { right: 16px; }
+
+.lightbox-footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  gap: 16px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.lightbox-counter {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.lightbox-book-btn {
+  background: #ff385c;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-book-btn:hover {
+  background: #ff4d6d;
+  box-shadow: 0 4px 16px rgba(255, 56, 92, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 4. Skiper Mobile Floating Island Dock */
+.mobile-dock {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 420px;
+  background: rgba(18, 20, 26, 0.88);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  border-radius: 100px;
+  padding: 8px 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 168, 83, 0.15);
+  z-index: 150;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-dock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 50px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  transition: all var(--transition-fast);
+}
+
+.mobile-dock-btn.primary {
+  background: linear-gradient(135deg, #ff385c 0%, #e00b41 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(255, 56, 92, 0.4);
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.mobile-dock-btn:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 768px) {
+  .mobile-dock {
+    display: flex;
+  }
+  .back-to-top {
+    bottom: 84px;
+    right: 18px;
+  }
+  body {
+    padding-bottom: 70px;
+  }
+}

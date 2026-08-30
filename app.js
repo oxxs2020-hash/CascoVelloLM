@@ -152,6 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
       map_btn_center: "📍 Centrar",
       map_btn_gmaps: "Google Maps ↗",
       
+      // Skiper UI Mobile & Lightbox
+      mobile_dock_units: "Alojamientos",
+      mobile_dock_book: "Reservar Airbnb ↗",
+      lightbox_btn_book: "Reservar en Airbnb ↗",
+      
       // Footer
       footer_desc: "Cuatro apartamentos exclusivos en el corazón peatonal del casco histórico de Vigo. Diseñados para viajeros que valoran el confort, la calma y la autenticidad.",
       footer_explore: "Explorar",
@@ -310,6 +315,11 @@ document.addEventListener('DOMContentLoaded', () => {
       map_btn_center: "📍 Recenter",
       map_btn_gmaps: "Google Maps ↗",
       
+      // Skiper UI Mobile & Lightbox
+      mobile_dock_units: "The Units",
+      mobile_dock_book: "Book on Airbnb ↗",
+      lightbox_btn_book: "Book on Airbnb ↗",
+      
       // Footer
       footer_desc: "Four curated apartments in the pedestrian heart of Vigo's historic quarter. Designed for travelers who appreciate quiet luxury, walkability, and cultural immersion.",
       footer_explore: "Explore",
@@ -360,6 +370,12 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-pressed', isActive);
     });
+
+    // Update mobile dock language label
+    const mobileLangLabel = document.querySelector('#mobile-lang-btn .lang-label');
+    if (mobileLangLabel) {
+      mobileLangLabel.textContent = lang === 'es' ? 'EN' : 'ES';
+    }
   }
 
   // Bind Language switcher buttons
@@ -371,9 +387,127 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Mobile dock language toggle
+  const mobileLangBtn = document.getElementById('mobile-lang-btn');
+  if (mobileLangBtn) {
+    mobileLangBtn.addEventListener('click', () => {
+      const currentLang = localStorage.getItem('casco_vello_lang') || 'es';
+      const nextLang = currentLang === 'es' ? 'en' : 'es';
+      setLanguage(nextLang);
+    });
+  }
+
   // Initialize language (default: Spanish or stored preference)
   const savedLang = localStorage.getItem('casco_vello_lang') || 'es';
   setLanguage(savedLang);
+
+  // ——— Skiper UI Spotlight Cursor Effect ———
+  const spotlightElements = document.querySelectorAll('.card, .exp-card, .testimonial-card, .direct-link-card, .booking-mask, .distance-item');
+  spotlightElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      el.style.setProperty('--mouse-x', `${x}px`);
+      el.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  // ——— Interactive Gallery Lightbox ———
+  const lightbox = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const lightboxPrev = document.querySelector('.lightbox-nav-btn.prev');
+  const lightboxNext = document.querySelector('.lightbox-nav-btn.next');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxBookBtn = document.getElementById('lightbox-book-btn');
+
+  let currentGallery = [];
+  let currentGalleryIndex = 0;
+  let currentAirbnbUrl = '';
+
+  function openLightbox(images, startIndex, caption, airbnbUrl) {
+    if (!lightbox || !images || images.length === 0) return;
+    currentGallery = images;
+    currentGalleryIndex = startIndex || 0;
+    currentAirbnbUrl = airbnbUrl || '';
+
+    updateLightboxView(caption);
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxView(caption) {
+    if (!currentGallery[currentGalleryIndex]) return;
+    const item = currentGallery[currentGalleryIndex];
+    if (lightboxImg) {
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.alt || 'Apartamento Casco Vello';
+    }
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
+    }
+    if (lightboxCaption) {
+      lightboxCaption.textContent = item.alt || caption || 'Casco Vello Residences';
+    }
+    if (lightboxBookBtn) {
+      lightboxBookBtn.href = currentAirbnbUrl || '#booking';
+    }
+  }
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', () => {
+      currentGalleryIndex = (currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length;
+      updateLightboxView();
+    });
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', () => {
+      currentGalleryIndex = (currentGalleryIndex + 1) % currentGallery.length;
+      updateLightboxView();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (lightbox && lightbox.classList.contains('open')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft' && lightboxPrev) lightboxPrev.click();
+      if (e.key === 'ArrowRight' && lightboxNext) lightboxNext.click();
+    }
+  });
+
+  // Attach Lightbox Triggers to Carousel Images
+  document.querySelectorAll('.card').forEach(card => {
+    const slides = card.querySelectorAll('.carousel-slide img');
+    const airbnbLink = card.querySelector('.btn-airbnb')?.getAttribute('href') || '';
+    const title = card.querySelector('.card-header h3')?.textContent || '';
+    const images = Array.from(slides).map(img => ({ src: img.src, alt: img.alt }));
+
+    slides.forEach((img, index) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox(images, index, title, airbnbLink);
+      });
+    });
+  });
 
   // ——— Interactive Leaflet Map ———
   const mapContainer = document.getElementById('interactive-map');

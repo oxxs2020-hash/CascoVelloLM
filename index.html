@@ -633,6 +633,40 @@
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Volver arriba">↑</button>
 
+  <!-- Skiper Mobile Floating Island Dock -->
+  <nav class="mobile-dock" aria-label="Navegación móvil rápida">
+    <a href="#properties" class="mobile-dock-btn">
+      <span>🏛️</span>
+      <span data-i18n="mobile_dock_units">Alojamientos</span>
+    </a>
+    <a href="#booking" class="mobile-dock-btn primary">
+      <span>📅</span>
+      <span data-i18n="mobile_dock_book">Reservar Airbnb ↗</span>
+    </a>
+    <button type="button" class="mobile-dock-btn lang-toggle-btn" id="mobile-lang-btn" aria-label="Cambiar idioma">
+      <span>🌐</span> <span class="lang-label">EN</span>
+    </button>
+  </nav>
+
+  <!-- Interactive Gallery Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog">
+    <button type="button" class="lightbox-close" aria-label="Cerrar vista">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrapper">
+        <button type="button" class="lightbox-nav-btn prev" aria-label="Foto anterior">‹</button>
+        <img src="" alt="Vista ampliada" class="lightbox-img" id="lightbox-img" />
+        <button type="button" class="lightbox-nav-btn next" aria-label="Siguiente foto">›</button>
+      </div>
+      <div class="lightbox-footer">
+        <span class="lightbox-counter" id="lightbox-counter">1 / 5</span>
+        <span class="lightbox-caption" id="lightbox-caption">Estudio en Casco Vello</span>
+        <a href="" target="_blank" rel="noopener noreferrer" class="lightbox-book-btn" id="lightbox-book-btn">
+          <span data-i18n="lightbox_btn_book">Reservar en Airbnb ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
 </body>
