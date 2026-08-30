@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casco Vello Residences | Luxury Stays in Vigo, Spain</title>
-  <meta name="description" content="Four quiet-luxury apartments in the pedestrian heart of Casco Vello, Vigo. Curated minimalist stays with premium amenities, ocean views, and effortless exploration." />
-  <meta name="keywords" content="Vigo apartments, Casco Vello, luxury stay Spain, vacation rental Galicia, short term rental Vigo" />
-  <meta property="og:title" content="Casco Vello Residences | Luxury Stays in Vigo" />
-  <meta property="og:description" content="Four quiet-luxury apartments positioned in the pedestrian core of Casco Vello, crafted for long afternoons, remote work, and effortless exploration." />
+  <title data-i18n="page_title">Casco Vello Residences | Apartamentos de Lujo en Vigo, España</title>
+  <meta name="description" data-i18n="meta_desc" content="Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo. Estancias minimalistas con comodidades premium y vistas." />
+  <meta name="keywords" content="Vigo apartments, apartamentos Casco Vello, alquiler vacacional Vigo, luxury stay Spain, vacation rental Galicia, Vigo suites" />
+  <meta property="og:title" content="Casco Vello Residences | Apartamentos de Lujo en Vigo" />
+  <meta property="og:description" content="Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
@@ -36,31 +36,38 @@
       <span></span>
     </button>
     <nav id="main-nav">
-      <a href="#properties">The Units</a>
-      <a href="#experience">Experience</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#location">Location</a>
-      <a href="https://www.airbnb.com" target="_blank" class="nav-cta">Direct Booking</a>
+      <a href="#properties" data-i18n="nav_units">Alojamientos</a>
+      <a href="#experience" data-i18n="nav_experience">Experiencia</a>
+      <a href="#reviews" data-i18n="nav_reviews">Opiniones</a>
+      <a href="#location" data-i18n="nav_location">Ubicación</a>
+      
+      <!-- Language Switcher (ES / EN) -->
+      <div class="lang-switcher" aria-label="Selector de idioma">
+        <button type="button" class="lang-btn active" data-lang="es" aria-label="Español">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+
+      <a href="#properties" class="nav-cta" data-i18n="nav_cta">Reservar</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="assets/images/hero-bg.jpg" alt="Evening atmosphere in Casco Vello, Vigo" loading="eager" />
+      <img src="assets/images/hero-bg.jpg" alt="Casco Vello histórico, Vigo" loading="eager" />
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-meta">Exclusive Urban Escapes • Vigo, Spain</span>
-      <h1>Restyled Heritage.<br>Uncompromising Minimalist Living.</h1>
-      <p class="hero-sub">Four quiet-luxury apartments positioned in the pedestrian core of Casco Vello, crafted for long afternoons, remote work, and effortless exploration.</p>
+      <span class="hero-meta" data-i18n="hero_meta">Escapadas Urbanas Exclusivas • Vigo, España</span>
+      <h1 data-i18n-html="hero_title">Patrimonio Renovado.<br>Diseño y Confort Minimalista.</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo, diseñados para el descanso, el teletrabajo y el disfrute sin prisas.</p>
       <div class="hero-cta-group">
-        <a href="#properties" class="btn-primary">Explore the Collection <span>→</span></a>
-        <a href="#location" class="btn-outline">Discover the Area</a>
+        <a href="#properties" class="btn-primary"><span data-i18n="hero_btn_explore">Explorar la Colección</span> <span>→</span></a>
+        <a href="#location" class="btn-outline" data-i18n="hero_btn_discover">Descubrir la Zona</a>
       </div>
     </div>
     <div class="scroll-indicator">
-      <span>Scroll</span>
+      <span data-i18n="hero_scroll">Desplazar</span>
       <div class="line"></div>
     </div>
   </section>
@@ -68,8 +75,8 @@
   <!-- Properties Collection -->
   <main class="collection" id="properties">
     <div class="section-header reveal">
-      <h2>The Collection</h2>
-      <span class="section-count">4 Curated Spaces</span>
+      <h2 data-i18n="collection_title">Nuestros Alojamientos</h2>
+      <span class="section-count" data-i18n="collection_count">4 Espacios Exclusivos</span>
     </div>
 
     <div class="property-grid">
@@ -79,14 +86,14 @@
         <div class="media-container">
           <div class="carousel">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/023731ff-117f-48bf-be92-5f783e1ec226.jpeg" alt="Charming studio interior" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/ae1cdfda-127e-4ee8-bfb3-2e2d11ce0211.jpeg" alt="Living and sleeping space" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/18c7065c-b730-4238-b391-50155b74fe4b.jpeg" alt="Studio kitchen and dining area" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/145559db-118f-4ab9-80b0-27d3fc33ace6.jpeg" alt="Bathroom and amenities" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/a9a8aa4f-6a8c-4b83-92de-4196cd1752aa.jpeg" alt="Quiet square surroundings" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/023731ff-117f-48bf-be92-5f783e1ec226.jpeg" alt="Estudio en Casco Vello" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/ae1cdfda-127e-4ee8-bfb3-2e2d11ce0211.jpeg" alt="Espacio de descanso y salón" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/18c7065c-b730-4238-b391-50155b74fe4b.jpeg" alt="Cocina y zona de comedor" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/145559db-118f-4ab9-80b0-27d3fc33ace6.jpeg" alt="Baño y equipamiento" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/a9a8aa4f-6a8c-4b83-92de-4196cd1752aa.jpeg" alt="Plaza y entorno tranquilo" loading="lazy" /></div>
             </div>
-            <button class="carousel-btn prev" aria-label="Previous image">‹</button>
-            <button class="carousel-btn next" aria-label="Next image">›</button>
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn next" aria-label="Siguiente imagen">›</button>
             <div class="carousel-dots">
               <button class="carousel-dot active" aria-label="Slide 1"></button>
               <button class="carousel-dot" aria-label="Slide 2"></button>
@@ -96,27 +103,27 @@
             </div>
           </div>
           <div class="badge-bar">
-            <span class="badge">Quiet Plaza</span>
-            <span class="badge badge-rating">★ 5.0 (1 review)</span>
+            <span class="badge" data-i18n="card1_badge_view">Plaza Tranquila</span>
+            <span class="badge badge-rating" data-i18n="card1_badge_rating">★ 5.0 (1 opinión)</span>
           </div>
         </div>
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3>Charming Studio in the Heart of Casco Vello</h3>
+              <h3 data-i18n="card1_title">Estudio con Encanto en Pleno Casco Vello</h3>
             </div>
-            <p class="card-desc">Modern studio in the Old Town of Vigo, situated in a quiet traffic-free plaza. Outfitted with high-speed fiber Wi-Fi, air conditioning, double bed plus sofa bed, and a fully equipped kitchen. Self and online check-in.</p>
+            <p class="card-desc" data-i18n="card1_desc">Estudio moderno en el casco histórico de Vigo, situado en una plaza tranquila sin tráfico rodado. Equipado con Wi-Fi fibra de alta velocidad, aire acondicionado, cama doble más sofá cama y cocina completa. Check-in online y autónomo.</p>
             <div class="amenities">
-              <span class="amenity-tag">Studio / 1 Bath</span>
-              <span class="amenity-tag">Double Bed + Sofa</span>
-              <span class="amenity-tag">Air Conditioning</span>
-              <span class="amenity-tag">Equipped Kitchen</span>
-              <span class="amenity-tag">Self Check-in</span>
+              <span class="amenity-tag" data-i18n="card1_tag1">Estudio / 1 Baño</span>
+              <span class="amenity-tag" data-i18n="card1_tag2">Cama Doble + Sofá</span>
+              <span class="amenity-tag" data-i18n="card1_tag3">Aire Acondicionado</span>
+              <span class="amenity-tag" data-i18n="card1_tag4">Cocina Equipada</span>
+              <span class="amenity-tag" data-i18n="card1_tag5">Check-in Autónomo</span>
             </div>
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="btn-link">Reserve <span class="arrow">↗</span></a>
+            <a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="btn-link"><span data-i18n="card1_reserve">Reservar</span> <span class="arrow">↗</span></a>
           </div>
         </div>
       </article>
@@ -126,14 +133,14 @@
         <div class="media-container">
           <div class="carousel">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/18b2b2c6-9a0d-4199-965c-abbe4dafd967.jpeg" alt="Ideal studio main space" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/a5c57c0e-75ab-4c7f-ba3f-fc92915011bc.jpeg" alt="Kitchen and dining setup" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/af63c014-c560-45e9-b5ca-ec9c1d1683b2.jpeg" alt="Comfortable sleeping area" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/98e1e747-a3b9-498c-b066-a3ea6ec1c59d.jpeg" alt="Modern bathroom" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/b1d080e3-d166-449e-8527-418226462bf2.jpeg" alt="Plaza views" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/18b2b2c6-9a0d-4199-965c-abbe4dafd967.jpeg" alt="Estudio moderno para recorrer Vigo" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/a5c57c0e-75ab-4c7f-ba3f-fc92915011bc.jpeg" alt="Zona de cocina y estancia" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/af63c014-c560-45e9-b5ca-ec9c1d1683b2.jpeg" alt="Cama y zona de descanso" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/98e1e747-a3b9-498c-b066-a3ea6ec1c59d.jpeg" alt="Baño equipado" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/b1d080e3-d166-449e-8527-418226462bf2.jpeg" alt="Vistas a la plaza" loading="lazy" /></div>
             </div>
-            <button class="carousel-btn prev" aria-label="Previous image">‹</button>
-            <button class="carousel-btn next" aria-label="Next image">›</button>
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn next" aria-label="Siguiente imagen">›</button>
             <div class="carousel-dots">
               <button class="carousel-dot active" aria-label="Slide 1"></button>
               <button class="carousel-dot" aria-label="Slide 2"></button>
@@ -143,27 +150,27 @@
             </div>
           </div>
           <div class="badge-bar">
-            <span class="badge">Prime Walkability</span>
-            <span class="badge badge-rating">★ 4.33 (3 reviews)</span>
+            <span class="badge" data-i18n="card2_badge_view">Máxima Comodidad</span>
+            <span class="badge badge-rating" data-i18n="card2_badge_rating">★ 4.33 (3 opiniones)</span>
           </div>
         </div>
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3>Ideal Studio for Enjoying Vigo on Foot</h3>
+              <h3 data-i18n="card2_title">Estudio Ideal para Disfrutar Vigo a Pie</h3>
             </div>
-            <p class="card-desc">Modern retreat in the pedestrian core of Casco Vello. Features fast Wi-Fi, air conditioning, dishwasher, in-unit washer/dryer, double bed, and sofa bed in a peaceful square with no traffic.</p>
+            <p class="card-desc" data-i18n="card2_desc">Espacio moderno y acogedor en el Casco Vello. Dispone de Wi-Fi rápido, aire acondicionado, cocina equipada con lavavajillas, lavadora/secadora, cama doble y sofá cama en una plaza sin ruidos.</p>
             <div class="amenities">
-              <span class="amenity-tag">Studio / 1 Bath</span>
-              <span class="amenity-tag">Dishwasher</span>
-              <span class="amenity-tag">Washer / Dryer</span>
-              <span class="amenity-tag">Double Bed + Sofa</span>
-              <span class="amenity-tag">Air Conditioning</span>
+              <span class="amenity-tag" data-i18n="card2_tag1">Estudio / 1 Baño</span>
+              <span class="amenity-tag" data-i18n="card2_tag2">Lavavajillas</span>
+              <span class="amenity-tag" data-i18n="card2_tag3">Lavadora / Secadora</span>
+              <span class="amenity-tag" data-i18n="card2_tag4">Cama Doble + Sofá</span>
+              <span class="amenity-tag" data-i18n="card2_tag5">Aire Acondicionado</span>
             </div>
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1446491949902470890?unique_share_id=976ee7d6-397a-429d-a9ca-3c9260c3624c&viralityEntryPoint=1&s=76" target="_blank" class="btn-link">Reserve <span class="arrow">↗</span></a>
+            <a href="https://www.airbnb.com/rooms/1446491949902470890?unique_share_id=976ee7d6-397a-429d-a9ca-3c9260c3624c&viralityEntryPoint=1&s=76" target="_blank" class="btn-link"><span data-i18n="card2_reserve">Reservar</span> <span class="arrow">↗</span></a>
           </div>
         </div>
       </article>
@@ -173,14 +180,14 @@
         <div class="media-container">
           <div class="carousel">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/9973f99f-0775-46d2-b11b-fe8d625685fd.jpeg" alt="Bright historic center studio" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/b2617d11-e8ea-4056-a1e2-d5740e4fdeac.jpeg" alt="Elevated views and open plan" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/5630a66d-d1e4-4c93-a62f-3657d041fe32.jpeg" alt="Sleek kitchen setup" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/3fe8a546-7558-4ccb-810c-0733fa519f8e.jpeg" alt="Restful sleeping nook" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/00f906c7-a24a-4b74-b474-917066f346bd.jpeg" alt="Bathroom and rain shower" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/9973f99f-0775-46d2-b11b-fe8d625685fd.jpeg" alt="Estudio luminoso casco histórico" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/b2617d11-e8ea-4056-a1e2-d5740e4fdeac.jpeg" alt="Vistas elevadas y luz natural" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/5630a66d-d1e4-4c93-a62f-3657d041fe32.jpeg" alt="Cocina moderna integrada" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/3fe8a546-7558-4ccb-810c-0733fa519f8e.jpeg" alt="Zona de descanso confortable" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/00f906c7-a24a-4b74-b474-917066f346bd.jpeg" alt="Baño con ducha moderna" loading="lazy" /></div>
             </div>
-            <button class="carousel-btn prev" aria-label="Previous image">‹</button>
-            <button class="carousel-btn next" aria-label="Next image">›</button>
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn next" aria-label="Siguiente imagen">›</button>
             <div class="carousel-dots">
               <button class="carousel-dot active" aria-label="Slide 1"></button>
               <button class="carousel-dot" aria-label="Slide 2"></button>
@@ -190,27 +197,27 @@
             </div>
           </div>
           <div class="badge-bar">
-            <span class="badge">Historic Views</span>
-            <span class="badge badge-rating">★ 5.0 (2 reviews)</span>
+            <span class="badge" data-i18n="card3_badge_view">Vistas Casco Histórico</span>
+            <span class="badge badge-rating" data-i18n="card3_badge_rating">★ 5.0 (2 opiniones)</span>
           </div>
         </div>
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3>Modern & Bright Historic Center Studio</h3>
+              <h3 data-i18n="card3_title">Estudio Moderno y Luminoso con Vistas</h3>
             </div>
-            <p class="card-desc">Bright, sunlit studio overlooking the historic center. Complete with premium acoustic insulation, fast Wi-Fi, air conditioning, dishwasher, washer/dryer, and double bed plus sofa bed.</p>
+            <p class="card-desc" data-i18n="card3_desc">Disfruta de una estancia especial en este luminoso estudio con vistas al casco histórico. Aislamiento acústico de primera, Wi-Fi fibra, aire acondicionado, lavavajillas, lavadora/secadora y cama doble más sofá.</p>
             <div class="amenities">
-              <span class="amenity-tag">Studio / 1 Bath</span>
-              <span class="amenity-tag">Historic Center Views</span>
-              <span class="amenity-tag">Dishwasher</span>
-              <span class="amenity-tag">Washer / Dryer</span>
-              <span class="amenity-tag">Fast Wi-Fi</span>
+              <span class="amenity-tag" data-i18n="card3_tag1">Estudio / 1 Baño</span>
+              <span class="amenity-tag" data-i18n="card3_tag2">Vistas Casco Histórico</span>
+              <span class="amenity-tag" data-i18n="card3_tag3">Lavavajillas</span>
+              <span class="amenity-tag" data-i18n="card3_tag4">Lavadora / Secadora</span>
+              <span class="amenity-tag" data-i18n="card3_tag5">Wi-Fi Rápido</span>
             </div>
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1447210391464096148?unique_share_id=55064be2-e6e5-43b4-8ab2-d7c998ba44e2&viralityEntryPoint=1&s=76" target="_blank" class="btn-link">Reserve <span class="arrow">↗</span></a>
+            <a href="https://www.airbnb.com/rooms/1447210391464096148?unique_share_id=55064be2-e6e5-43b4-8ab2-d7c998ba44e2&viralityEntryPoint=1&s=76" target="_blank" class="btn-link"><span data-i18n="card3_reserve">Reservar</span> <span class="arrow">↗</span></a>
           </div>
         </div>
       </article>
@@ -220,14 +227,14 @@
         <div class="media-container">
           <div class="carousel">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/d3945402-a329-4031-9234-22156092fae6.jpeg" alt="Penthouse duplex with ocean view" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/87f4efd2-de80-42ab-9dfa-ae035e1ce90e.jpeg" alt="Bright duplex living space" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/675eae26-5a1b-4907-806b-7d558ea779d8.jpeg" alt="Dedicated workspace & light" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/988a17d6-89e3-4879-90fa-d315e7e72d54.jpeg" alt="Kitchen & mezzanine layout" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/4c9c5d07-c576-48b6-a124-762639b38a8a.jpeg" alt="Upper level double bed" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/d3945402-a329-4031-9234-22156092fae6.jpeg" alt="Ático dúplex con vistas al mar" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/87f4efd2-de80-42ab-9dfa-ae035e1ce90e.jpeg" alt="Salón dúplex amplio y luminoso" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/675eae26-5a1b-4907-806b-7d558ea779d8.jpeg" alt="Espacio de trabajo y luz natural" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/988a17d6-89e3-4879-90fa-d315e7e72d54.jpeg" alt="Cocina y distribución dúplex" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/4c9c5d07-c576-48b6-a124-762639b38a8a.jpeg" alt="Cama doble en planta alta" loading="lazy" /></div>
             </div>
-            <button class="carousel-btn prev" aria-label="Previous image">‹</button>
-            <button class="carousel-btn next" aria-label="Next image">›</button>
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn next" aria-label="Siguiente imagen">›</button>
             <div class="carousel-dots">
               <button class="carousel-dot active" aria-label="Slide 1"></button>
               <button class="carousel-dot" aria-label="Slide 2"></button>
@@ -237,27 +244,27 @@
             </div>
           </div>
           <div class="badge-bar">
-            <span class="badge">Duplex Penthouse</span>
-            <span class="badge badge-rating">★ New · Sea Views</span>
+            <span class="badge" data-i18n="card4_badge_view">Ático Dúplex</span>
+            <span class="badge badge-rating" data-i18n="card4_badge_rating">★ Nuevo · Vistas al Mar</span>
           </div>
         </div>
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3>Spectacular Penthouse Duplex with Ocean Views</h3>
+              <h3 data-i18n="card4_title">Espectacular Ático Dúplex con Vistas al Mar</h3>
             </div>
-            <p class="card-desc">Top-floor duplex filled with natural light and sweeping Atlantic ocean views. Features a dedicated creative workspace, double bed, hot/cold air conditioning, fully equipped kitchen, and high-speed Wi-Fi.</p>
+            <p class="card-desc" data-i18n="card4_desc">Ático dúplex moderno y muy luminoso en el corazón del Casco Vello con vistas a la ría y el océano Atlántico. Cama doble, espacio de trabajo dedicado, cocina completa y aire acondicionado frío/calor.</p>
             <div class="amenities">
-              <span class="amenity-tag">Duplex Penthouse</span>
-              <span class="amenity-tag">Atlantic Ocean Views</span>
-              <span class="amenity-tag">Dedicated Workspace</span>
-              <span class="amenity-tag">Hot / Cold A/C</span>
-              <span class="amenity-tag">Fast Wi-Fi</span>
+              <span class="amenity-tag" data-i18n="card4_tag1">Ático Dúplex</span>
+              <span class="amenity-tag" data-i18n="card4_tag2">Vistas al Mar</span>
+              <span class="amenity-tag" data-i18n="card4_tag3">Espacio de Trabajo</span>
+              <span class="amenity-tag" data-i18n="card4_tag4">A/C Frío / Calor</span>
+              <span class="amenity-tag" data-i18n="card4_tag5">Wi-Fi Rápido</span>
             </div>
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1713892901407024322?unique_share_id=0c1c5f67-14f8-40ae-9056-1a334a82e947&viralityEntryPoint=1&s=76" target="_blank" class="btn-link">Reserve <span class="arrow">↗</span></a>
+            <a href="https://www.airbnb.com/rooms/1713892901407024322?unique_share_id=0c1c5f67-14f8-40ae-9056-1a334a82e947&viralityEntryPoint=1&s=76" target="_blank" class="btn-link"><span data-i18n="card4_reserve">Reservar</span> <span class="arrow">↗</span></a>
           </div>
         </div>
       </article>
@@ -268,37 +275,37 @@
   <!-- Experience Section -->
   <section class="experience" id="experience">
     <div class="section-header reveal">
-      <h2>The Casco Vello Experience</h2>
-      <span class="section-count">What Awaits You</span>
+      <h2 data-i18n="exp_title">La Experiencia Casco Vello</h2>
+      <span class="section-count" data-i18n="exp_count">Lo que te espera</span>
     </div>
 
     <div class="experience-grid">
 
       <div class="exp-card reveal delay-1">
         <span class="exp-icon">🚶</span>
-        <h4>Total Walkability</h4>
-        <p>Everything within minutes on foot — markets, restaurants, beaches, and the city center. No car needed, ever.</p>
+        <h4 data-i18n="exp1_title">Totalmente Peatonal</h4>
+        <p data-i18n="exp1_desc">Todo a pocos minutos a pie: mercados, restaurantes, el puerto y el centro comercial. Sin necesidad de coche.</p>
         <span class="exp-stat"><span class="counter-value" data-target="98" data-suffix="%">0%</span></span>
       </div>
 
       <div class="exp-card reveal delay-2">
         <span class="exp-icon">🍷</span>
-        <h4>Galician Gastronomy</h4>
-        <p>Surrounded by pintxo bars, seafood tabernas, and Michelin-quality restaurants in the oldest quarter of the city.</p>
+        <h4 data-i18n="exp2_title">Gastronomía Gallega</h4>
+        <p data-i18n="exp2_desc">Rodeado de tascas tradicionales de marisco, bares de tapas y restaurantes de autor en la zona más auténtica.</p>
         <span class="exp-stat"><span class="counter-value" data-target="40" data-suffix="+">0+</span></span>
       </div>
 
       <div class="exp-card reveal delay-3">
         <span class="exp-icon">🏛️</span>
-        <h4>Living History</h4>
-        <p>Roman ruins, medieval walls, and centuries-old granite architecture create an immersive cultural backdrop.</p>
-        <span class="exp-stat"><span class="counter-value" data-target="800" data-suffix=" yrs">0 yrs</span></span>
+        <h4 data-i18n="exp3_title">Historia Viva</h4>
+        <p data-i18n="exp3_desc">Restos romanos, murallas medievales y arquitectura noble de granito crean un entorno cultural único.</p>
+        <span class="exp-stat"><span class="counter-value" data-target="800" data-suffix=" años">0 años</span></span>
       </div>
 
       <div class="exp-card reveal delay-4">
         <span class="exp-icon">🌊</span>
-        <h4>Atlantic Proximity</h4>
-        <p>The Ría de Vigo and its beaches are a short stroll away. Sunsets over the Cíes Islands are unforgettable.</p>
+        <h4 data-i18n="exp4_title">Cercanía al Atlántico</h4>
+        <p data-i18n="exp4_desc">La Ría de Vigo y sus paseos a un paso. Puestas de sol inolvidables hacia las Islas Cíes.</p>
         <span class="exp-stat"><span class="counter-value" data-target="5" data-suffix=" min">0 min</span></span>
       </div>
 
@@ -309,8 +316,8 @@
   <section class="testimonials" id="reviews">
     <div class="testimonials-inner">
       <div class="section-header reveal">
-        <h2>Guest Voices</h2>
-        <span class="section-count">From Our Visitors</span>
+        <h2 data-i18n="rev_title">Voces de Huéspedes</h2>
+        <span class="section-count" data-i18n="rev_count">De Nuestros Visitantes</span>
       </div>
 
       <div class="testimonial-carousel reveal">
@@ -320,34 +327,34 @@
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"The apartment was immaculate and perfectly located. We walked everywhere — to the market, to dinner, to the waterfront. The acoustic insulation was remarkable; total silence in the heart of the old town."</p>
+              <p class="testimonial-text" data-i18n="rev1_text">"El apartamento estaba impecable y perfectamente ubicado. Fuimos a pie a todas partes: al mercado, a cenar, al puerto. El aislamiento acústico es excelente; silencio total en pleno casco histórico."</p>
               <div class="testimonial-author">
                 <div class="author-avatar">M</div>
                 <div class="author-info">
-                  <span class="author-name">Maria C.</span>
-                  <span class="author-from">Barcelona, Spain</span>
+                  <span class="author-name" data-i18n="rev1_author">Maria C.</span>
+                  <span class="author-from" data-i18n="rev1_from">Barcelona, España</span>
                 </div>
               </div>
             </div>
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"Worked remotely for two weeks from the penthouse. The fiber Wi-Fi never dropped, the workspace was thoughtfully designed, and watching sunsets over the Cíes Islands became my evening ritual."</p>
+              <p class="testimonial-text" data-i18n="rev2_text">"Teletrabajé dos semanas desde el ático. El Wi-Fi de fibra nunca falló, el espacio de trabajo está muy bien pensado y ver el atardecer sobre las Islas Cíes fue un auténtico lujo cada tarde."</p>
               <div class="testimonial-author">
                 <div class="author-avatar">J</div>
                 <div class="author-info">
-                  <span class="author-name">James T.</span>
-                  <span class="author-from">London, UK</span>
+                  <span class="author-name" data-i18n="rev2_author">James T.</span>
+                  <span class="author-from" data-i18n="rev2_from">Londres, Reino Unido</span>
                 </div>
               </div>
             </div>
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"The minimalist aesthetic paired with premium amenities created an experience far beyond typical rentals. Self check-in was seamless, and Jose's recommendations for restaurants were outstanding."</p>
+              <p class="testimonial-text" data-i18n="rev3_text">"La estética minimalista unida al equipamiento premium crea una experiencia muy superior. El check-in autónomo fue perfecto y las recomendaciones gastronómicas de Jose inmejorables."</p>
               <div class="testimonial-author">
                 <div class="author-avatar">L</div>
                 <div class="author-info">
-                  <span class="author-name">Laura & Pierre</span>
-                  <span class="author-from">Lyon, France</span>
+                  <span class="author-name" data-i18n="rev3_author">Laura & Pierre</span>
+                  <span class="author-from" data-i18n="rev3_from">Lyon, Francia</span>
                 </div>
               </div>
             </div>
@@ -357,34 +364,34 @@
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"Vigo's old town has an energy you can't find anywhere else in Galicia. This studio captures it perfectly — traditional stone exterior, sleek modern interior. We're already planning our return trip."</p>
+              <p class="testimonial-text" data-i18n="rev4_text">"El casco histórico de Vigo tiene una energía única. Este estudio lo aprovecha al máximo: arquitectura tradicional de piedra con interior contemporáneo y acogedor."</p>
               <div class="testimonial-author">
                 <div class="author-avatar">A</div>
                 <div class="author-info">
-                  <span class="author-name">Anna S.</span>
-                  <span class="author-from">Berlin, Germany</span>
+                  <span class="author-name" data-i18n="rev4_author">Anna S.</span>
+                  <span class="author-from" data-i18n="rev4_from">Berlín, Alemania</span>
                 </div>
               </div>
             </div>
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"We stayed five nights in the historic center studio and it exceeded every expectation. The city views from the window, the fully stocked kitchen, and the central yet quiet location were perfect."</p>
+              <p class="testimonial-text" data-i18n="rev5_text">"Nos alojamos cinco noches en el estudio del centro histórico y superó todas las expectativas. Vistas luminosas, cocina completamente equipada y ubicación inmejorable."</p>
               <div class="testimonial-author">
                 <div class="author-avatar">R</div>
                 <div class="author-info">
-                  <span class="author-name">Ricardo M.</span>
-                  <span class="author-from">Lisbon, Portugal</span>
+                  <span class="author-name" data-i18n="rev5_author">Ricardo M.</span>
+                  <span class="author-from" data-i18n="rev5_from">Lisboa, Portugal</span>
                 </div>
               </div>
             </div>
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"Everything was spotless, communication was instant, and the neighborhood felt alive but never noisy. The washer/dryer was a huge plus for our extended stay. Highly recommended."</p>
+              <p class="testimonial-text" data-i18n="rev6_text">"Todo limpísimo, comunicación inmediata y el barrio tiene vida pero es muy tranquilo para descansar. La lavadora/secadora fue comodísima."</p>
               <div class="testimonial-author">
                 <div class="author-avatar">S</div>
                 <div class="author-info">
-                  <span class="author-name">Sophie W.</span>
-                  <span class="author-from">Amsterdam, Netherlands</span>
+                  <span class="author-name" data-i18n="rev6_author">Sophie W.</span>
+                  <span class="author-from" data-i18n="rev6_from">Ámsterdam, Países Bajos</span>
                 </div>
               </div>
             </div>
@@ -394,8 +401,8 @@
       </div>
 
       <div class="testimonial-nav reveal">
-        <button class="testimonial-nav-btn testimonial-prev" aria-label="Previous reviews">‹</button>
-        <button class="testimonial-nav-btn testimonial-next" aria-label="Next reviews">›</button>
+        <button class="testimonial-nav-btn testimonial-prev" aria-label="Opiniones anteriores">‹</button>
+        <button class="testimonial-nav-btn testimonial-next" aria-label="Siguientes opiniones">›</button>
       </div>
     </div>
   </section>
@@ -403,56 +410,56 @@
   <!-- Location Section -->
   <section class="location-section" id="location">
     <div class="section-header reveal">
-      <h2>Prime Location</h2>
-      <span class="section-count">Casco Vello, Vigo</span>
+      <h2 data-i18n="loc_title">Ubicación Privilegiada</h2>
+      <span class="section-count" data-i18n="loc_count">Casco Vello, Vigo</span>
     </div>
 
     <div class="location-grid">
 
       <div class="location-info reveal-left">
-        <p>Nestled in the pedestrian-only historic quarter of Vigo, our apartments sit at the intersection of heritage and modern urban life. Cobblestone lanes lead to bustling terraces, fresh seafood markets, and the shimmering waterfront of the Ría de Vigo.</p>
+        <p data-i18n="loc_desc">Situados en la zona histórica peatonal de Vigo, nuestros apartamentos se encuentran donde confluyen el patrimonio y la vida urbana contemporánea. Calles empedradas que llevan a terrazas acogedoras, mercados de marisco fresco y el paseo marítimo de la Ría de Vigo.</p>
 
         <div class="distance-list">
           <div class="distance-item">
             <span class="distance-icon">🏖️</span>
             <div class="distance-text">
-              <span class="place">Praia de Samil</span>
-              <span class="dist">12 min by car</span>
+              <span class="place" data-i18n="loc_dist1_name">Praia de Samil (Playa)</span>
+              <span class="dist" data-i18n="loc_dist1_val">12 min en coche</span>
             </div>
           </div>
           <div class="distance-item">
             <span class="distance-icon">🛍️</span>
             <div class="distance-text">
-              <span class="place">Calle Príncipe (shopping)</span>
-              <span class="dist">4 min walk</span>
+              <span class="place" data-i18n="loc_dist2_name">Calle Príncipe (zona comercial)</span>
+              <span class="dist" data-i18n="loc_dist2_val">4 min a pie</span>
             </div>
           </div>
           <div class="distance-item">
             <span class="distance-icon">🐟</span>
             <div class="distance-text">
-              <span class="place">Mercado da Pedra (oyster market)</span>
-              <span class="dist">2 min walk</span>
+              <span class="place" data-i18n="loc_dist3_name">Mercado da Pedra (ostras y marisco)</span>
+              <span class="dist" data-i18n="loc_dist3_val">2 min a pie</span>
             </div>
           </div>
           <div class="distance-item">
             <span class="distance-icon">⛴️</span>
             <div class="distance-text">
-              <span class="place">Ferry to Cíes Islands</span>
-              <span class="dist">8 min walk to port</span>
+              <span class="place" data-i18n="loc_dist4_name">Ferry a Islas Cíes (Puerto)</span>
+              <span class="dist" data-i18n="loc_dist4_val">8 min a pie al puerto</span>
             </div>
           </div>
           <div class="distance-item">
             <span class="distance-icon">🚄</span>
             <div class="distance-text">
-              <span class="place">Vigo-Urzáiz Train Station</span>
-              <span class="dist">10 min walk</span>
+              <span class="place" data-i18n="loc_dist5_name">Estación de Tren Vigo-Urzáiz</span>
+              <span class="dist" data-i18n="loc_dist5_val">10 min a pie</span>
             </div>
           </div>
           <div class="distance-item">
             <span class="distance-icon">✈️</span>
             <div class="distance-text">
-              <span class="place">Vigo Airport (VGO)</span>
-              <span class="dist">15 min by car</span>
+              <span class="place" data-i18n="loc_dist6_name">Aeropuerto de Vigo (VGO)</span>
+              <span class="dist" data-i18n="loc_dist6_val">15 min en coche</span>
             </div>
           </div>
         </div>
@@ -463,7 +470,7 @@
           src="https://www.openstreetmap.org/export/embed.html?bbox=-8.7285%2C42.2348%2C-8.7195%2C42.2408&layer=mapnik&marker=42.2378%2C-8.7240"
           allowfullscreen
           loading="lazy"
-          title="Casco Vello location map"
+          title="Casco Vello ubicación"
         ></iframe>
       </div>
 
@@ -475,43 +482,43 @@
     <div class="footer-grid">
       <div class="footer-col">
         <a href="#" class="footer-brand">Casco Vello Stays</a>
-        <p>Four curated apartments in the pedestrian heart of Vigo's historic quarter. Designed for travelers who appreciate quiet luxury, walkability, and cultural immersion.</p>
+        <p data-i18n="footer_desc">Cuatro apartamentos exclusivos en el corazón peatonal del casco histórico de Vigo. Diseñados para viajeros que valoran el confort, la calma y la autenticidad.</p>
       </div>
       <div class="footer-col">
-        <h5>Explore</h5>
+        <h5 data-i18n="footer_explore">Explorar</h5>
         <ul class="footer-links">
-          <li><a href="#properties">The Units</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#location">Location</a></li>
+          <li><a href="#properties" data-i18n="nav_units">Alojamientos</a></li>
+          <li><a href="#experience" data-i18n="nav_experience">Experiencia</a></li>
+          <li><a href="#reviews" data-i18n="nav_reviews">Opiniones</a></li>
+          <li><a href="#location" data-i18n="nav_location">Ubicación</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Quick Links</h5>
+        <h5 data-i18n="footer_quick">Enlaces Rápidos</h5>
         <ul class="footer-links">
-          <li><a href="https://www.airbnb.com" target="_blank">Book on Airbnb</a></li>
+          <li><a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" data-i18n="footer_airbnb">Reservar en Airbnb</a></li>
           <li><a href="https://www.google.com/maps/place/Casco+Vello,+Vigo" target="_blank">Google Maps</a></li>
-          <li><a href="https://www.turismodevigo.org" target="_blank">Visit Vigo</a></li>
+          <li><a href="https://www.turismodevigo.org" target="_blank" data-i18n="footer_vigo">Turismo de Vigo</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Contact & Host</h5>
-        <p>Managed by<br><strong>Jose Francisco</strong><br><span style="font-size: 0.85rem; opacity: 0.8;">CASCO VELLO REFORMAS SL</span><br><span style="font-size: 0.82rem; opacity: 0.7;">Rúa de Pi y Margall, 72, Vigo</span></p>
+        <h5 data-i18n="footer_contact">Contacto y Anfitrión</h5>
+        <p><span data-i18n="footer_managed">Gestionado por</span><br><strong>Jose Francisco</strong><br><span style="font-size: 0.85rem; opacity: 0.8;">CASCO VELLO REFORMAS SL</span><br><span style="font-size: 0.82rem; opacity: 0.7;">Rúa de Pi y Margall, 72, Vigo</span></p>
         <div class="social-links" style="margin-top: 16px;">
           <a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="social-link" aria-label="Airbnb" title="Airbnb Listing">🏠</a>
-          <a href="tel:+34615607988" class="social-link" aria-label="Phone" title="+34 615 60 79 88">📞</a>
+          <a href="tel:+34615607988" class="social-link" aria-label="Teléfono" title="+34 615 60 79 88">📞</a>
           <a href="mailto:cascovello@agrogallery.com" class="social-link" aria-label="Email" title="cascovello@agrogallery.com">✉️</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© <span class="current-year">2026</span> Casco Vello Stays. All rights reserved.</p>
-      <p>Casco Vello, Vigo, Pontevedra, Spain</p>
+      <p>© <span class="current-year">2026</span> <span data-i18n="footer_rights">Casco Vello Stays. Todos los derechos reservados.</span></p>
+      <p>Casco Vello, Vigo, Pontevedra, España</p>
     </div>
   </footer>
 
   <!-- Back to Top -->
-  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <button class="back-to-top" aria-label="Volver arriba">↑</button>
 
   <script src="app.js"></script>
 </body>

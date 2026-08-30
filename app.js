@@ -1,8 +1,317 @@
 /* ============================================
-   CASCO VELLO STAYS — Interactive Logic
+   CASCO VELLO STAYS — Interactive Logic & i18n
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ——— Language / Internationalization System (ES / EN) ———
+  const translations = {
+    es: {
+      page_title: "Casco Vello Residences | Apartamentos de Lujo en Vigo, España",
+      meta_desc: "Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo. Estancias minimalistas con comodidades premium y vistas.",
+      nav_units: "Alojamientos",
+      nav_experience: "Experiencia",
+      nav_reviews: "Opiniones",
+      nav_location: "Ubicación",
+      nav_cta: "Reservar",
+      hero_meta: "Escapadas Urbanas Exclusivas • Vigo, España",
+      hero_title: "Patrimonio Renovado.<br>Diseño y Confort Minimalista.",
+      hero_sub: "Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo, diseñados para el descanso, el teletrabajo y el disfrute sin prisas.",
+      hero_btn_explore: "Explorar la Colección",
+      hero_btn_discover: "Descubrir la Zona",
+      hero_scroll: "Desplazar",
+      
+      collection_title: "Nuestros Alojamientos",
+      collection_count: "4 Espacios Exclusivos",
+      
+      // Card 1
+      card1_badge_view: "Plaza Tranquila",
+      card1_badge_rating: "★ 5.0 (1 opinión)",
+      card1_title: "Estudio con Encanto en Pleno Casco Vello",
+      card1_desc: "Estudio moderno en el casco histórico de Vigo, situado en una plaza tranquila sin tráfico rodado. Equipado con Wi-Fi fibra de alta velocidad, aire acondicionado, cama doble más sofá cama y cocina completa. Check-in online y autónomo.",
+      card1_tag1: "Estudio / 1 Baño",
+      card1_tag2: "Cama Doble + Sofá",
+      card1_tag3: "Aire Acondicionado",
+      card1_tag4: "Cocina Equipada",
+      card1_tag5: "Check-in Autónomo",
+      card1_reserve: "Reservar",
+      
+      // Card 2
+      card2_badge_view: "Máxima Comodidad",
+      card2_badge_rating: "★ 4.33 (3 opiniones)",
+      card2_title: "Estudio Ideal para Disfrutar Vigo a Pie",
+      card2_desc: "Espacio moderno y acogedor en el Casco Vello. Dispone de Wi-Fi rápido, aire acondicionado, cocina equipada con lavavajillas, lavadora/secadora, cama doble y sofá cama en una plaza sin ruidos.",
+      card2_tag1: "Estudio / 1 Baño",
+      card2_tag2: "Lavavajillas",
+      card2_tag3: "Lavadora / Secadora",
+      card2_tag4: "Cama Doble + Sofá",
+      card2_tag5: "Aire Acondicionado",
+      card2_reserve: "Reservar",
+      
+      // Card 3
+      card3_badge_view: "Vistas Casco Histórico",
+      card3_badge_rating: "★ 5.0 (2 opiniones)",
+      card3_title: "Estudio Moderno y Luminoso con Vistas",
+      card3_desc: "Disfruta de una estancia especial en este luminoso estudio con vistas al casco histórico. Aislamiento acústico de primera, Wi-Fi fibra, aire acondicionado, lavavajillas, lavadora/secadora y cama doble más sofá.",
+      card3_tag1: "Estudio / 1 Baño",
+      card3_tag2: "Vistas Casco Histórico",
+      card3_tag3: "Lavavajillas",
+      card3_tag4: "Lavadora / Secadora",
+      card3_tag5: "Wi-Fi Rápido",
+      card3_reserve: "Reservar",
+      
+      // Card 4
+      card4_badge_view: "Ático Dúplex",
+      card4_badge_rating: "★ Nuevo · Vistas al Mar",
+      card4_title: "Espectacular Ático Dúplex con Vistas al Mar",
+      card4_desc: "Ático dúplex moderno y muy luminoso en el corazón del Casco Vello con vistas a la ría y el océano Atlántico. Cama doble, espacio de trabajo dedicado, cocina completa y aire acondicionado frío/calor.",
+      card4_tag1: "Ático Dúplex",
+      card4_tag2: "Vistas al Mar",
+      card4_tag3: "Espacio de Trabajo",
+      card4_tag4: "A/C Frío / Calor",
+      card4_tag5: "Wi-Fi Rápido",
+      card4_reserve: "Reservar",
+      
+      // Experience
+      exp_title: "La Experiencia Casco Vello",
+      exp_count: "Lo que te espera",
+      exp1_title: "Totalmente Peatonal",
+      exp1_desc: "Todo a pocos minutos a pie: mercados, restaurantes, el puerto y el centro comercial. Sin necesidad de coche.",
+      exp2_title: "Gastronomía Gallega",
+      exp2_desc: "Rodeado de tascas tradicionales de marisco, bares de tapas y restaurantes de autor en la zona más auténtica.",
+      exp3_title: "Historia Viva",
+      exp3_desc: "Restos romanos, murallas medievales y arquitectura noble de granito crean un entorno cultural único.",
+      exp4_title: "Cercanía al Atlántico",
+      exp4_desc: "La Ría de Vigo y sus paseos a un paso. Puestas de sol inolvidables hacia las Islas Cíes.",
+      
+      // Reviews
+      rev_title: "Voces de Huéspedes",
+      rev_count: "De Nuestros Visitantes",
+      rev1_text: "\"El apartamento estaba impecable y perfectamente ubicado. Fuimos a pie a todas partes: al mercado, a cenar, al puerto. El aislamiento acústico es excelente; silencio total en pleno casco histórico.\"",
+      rev1_author: "Maria C.",
+      rev1_from: "Barcelona, España",
+      rev2_text: "\"Teletrabajé dos semanas desde el ático. El Wi-Fi de fibra nunca falló, el espacio de trabajo está muy bien pensado y ver el atardecer sobre las Islas Cíes fue un auténtico lujo cada tarde.\"",
+      rev2_author: "James T.",
+      rev2_from: "Londres, Reino Unido",
+      rev3_text: "\"La estética minimalista unida al equipamiento premium crea una experiencia muy superior. El check-in autónomo fue perfecto y las recomendaciones gastronómicas de Jose inmejorables.\"",
+      rev3_author: "Laura & Pierre",
+      rev3_from: "Lyon, Francia",
+      rev4_text: "\"El casco histórico de Vigo tiene una energía única. Este estudio lo aprovecha al máximo: arquitectura tradicional de piedra con interior contemporáneo y acogedor.\"",
+      rev4_author: "Anna S.",
+      rev4_from: "Berlín, Alemania",
+      rev5_text: "\"Nos alojamos cinco noches en el estudio del centro histórico y superó todas las expectativas. Vistas luminosas, cocina completamente equipada y ubicación inmejorable.\"",
+      rev5_author: "Ricardo M.",
+      rev5_from: "Lisboa, Portugal",
+      rev6_text: "\"Todo limpísimo, comunicación inmediata y el barrio tiene vida pero es muy tranquilo para descansar. La lavadora/secadora fue comodísima.\"",
+      rev6_author: "Sophie W.",
+      rev6_from: "Ámsterdam, Países Bajos",
+      
+      // Location
+      loc_title: "Ubicación Privilegiada",
+      loc_count: "Casco Vello, Vigo",
+      loc_desc: "Situados en la zona histórica peatonal de Vigo, nuestros apartamentos se encuentran donde confluyen el patrimonio y la vida urbana contemporánea. Calles empedradas que llevan a terrazas acogedoras, mercados de marisco fresco y el paseo marítimo de la Ría de Vigo.",
+      loc_dist1_name: "Praia de Samil (Playa)",
+      loc_dist1_val: "12 min en coche",
+      loc_dist2_name: "Calle Príncipe (zona comercial)",
+      loc_dist2_val: "4 min a pie",
+      loc_dist3_name: "Mercado da Pedra (ostras y marisco)",
+      loc_dist3_val: "2 min a pie",
+      loc_dist4_name: "Ferry a Islas Cíes (Puerto)",
+      loc_dist4_val: "8 min a pie al puerto",
+      loc_dist5_name: "Estación de Tren Vigo-Urzáiz",
+      loc_dist5_val: "10 min a pie",
+      loc_dist6_name: "Aeropuerto de Vigo (VGO)",
+      loc_dist6_val: "15 min en coche",
+      
+      // Footer
+      footer_desc: "Cuatro apartamentos exclusivos en el corazón peatonal del casco histórico de Vigo. Diseñados para viajeros que valoran el confort, la calma y la autenticidad.",
+      footer_explore: "Explorar",
+      footer_quick: "Enlaces Rápidos",
+      footer_airbnb: "Reservar en Airbnb",
+      footer_vigo: "Turismo de Vigo",
+      footer_contact: "Contacto y Anfitrión",
+      footer_managed: "Gestionado por",
+      footer_rights: "Casco Vello Stays. Todos los derechos reservados."
+    },
+    en: {
+      page_title: "Casco Vello Residences | Luxury Stays in Vigo, Spain",
+      meta_desc: "Four quiet-luxury apartments in the pedestrian heart of Casco Vello, Vigo. Curated minimalist stays with premium amenities, ocean views, and effortless exploration.",
+      nav_units: "The Units",
+      nav_experience: "Experience",
+      nav_reviews: "Reviews",
+      nav_location: "Location",
+      nav_cta: "Reserve",
+      hero_meta: "Exclusive Urban Escapes • Vigo, Spain",
+      hero_title: "Restyled Heritage.<br>Uncompromising Minimalist Living.",
+      hero_sub: "Four quiet-luxury apartments positioned in the pedestrian core of Casco Vello, crafted for long afternoons, remote work, and effortless exploration.",
+      hero_btn_explore: "Explore the Collection",
+      hero_btn_discover: "Discover the Area",
+      hero_scroll: "Scroll",
+      
+      collection_title: "The Collection",
+      collection_count: "4 Curated Spaces",
+      
+      // Card 1
+      card1_badge_view: "Quiet Plaza",
+      card1_badge_rating: "★ 5.0 (1 review)",
+      card1_title: "Charming Studio in the Heart of Casco Vello",
+      card1_desc: "Modern studio in the Old Town of Vigo, situated in a quiet traffic-free plaza. Outfitted with high-speed fiber Wi-Fi, air conditioning, double bed plus sofa bed, and a fully equipped kitchen. Self and online check-in.",
+      card1_tag1: "Studio / 1 Bath",
+      card1_tag2: "Double Bed + Sofa",
+      card1_tag3: "Air Conditioning",
+      card1_tag4: "Equipped Kitchen",
+      card1_tag5: "Self Check-in",
+      card1_reserve: "Reserve",
+      
+      // Card 2
+      card2_badge_view: "Prime Walkability",
+      card2_badge_rating: "★ 4.33 (3 reviews)",
+      card2_title: "Ideal Studio for Enjoying Vigo on Foot",
+      card2_desc: "Modern retreat in the pedestrian core of Casco Vello. Features fast Wi-Fi, air conditioning, dishwasher, in-unit washer/dryer, double bed, and sofa bed in a peaceful square with no traffic.",
+      card2_tag1: "Studio / 1 Bath",
+      card2_tag2: "Dishwasher",
+      card2_tag3: "Washer / Dryer",
+      card2_tag4: "Double Bed + Sofa",
+      card2_tag5: "Air Conditioning",
+      card2_reserve: "Reserve",
+      
+      // Card 3
+      card3_badge_view: "Historic Views",
+      card3_badge_rating: "★ 5.0 (2 reviews)",
+      card3_title: "Modern & Bright Historic Center Studio",
+      card3_desc: "Bright, sunlit studio overlooking the historic center. Complete with premium acoustic insulation, fast Wi-Fi, air conditioning, dishwasher, washer/dryer, and double bed plus sofa bed.",
+      card3_tag1: "Studio / 1 Bath",
+      card3_tag2: "Historic Center Views",
+      card3_tag3: "Dishwasher",
+      card3_tag4: "Washer / Dryer",
+      card3_tag5: "Fast Wi-Fi",
+      card3_reserve: "Reserve",
+      
+      // Card 4
+      card4_badge_view: "Duplex Penthouse",
+      card4_badge_rating: "★ New · Sea Views",
+      card4_title: "Spectacular Penthouse Duplex with Ocean Views",
+      card4_desc: "Top-floor duplex filled with natural light and sweeping Atlantic ocean views. Features a dedicated creative workspace, double bed, hot/cold air conditioning, fully equipped kitchen, and high-speed Wi-Fi.",
+      card4_tag1: "Duplex Penthouse",
+      card4_tag2: "Atlantic Ocean Views",
+      card4_tag3: "Dedicated Workspace",
+      card4_tag4: "Hot / Cold A/C",
+      card4_tag5: "Fast Wi-Fi",
+      card4_reserve: "Reserve",
+      
+      // Experience
+      exp_title: "The Casco Vello Experience",
+      exp_count: "What Awaits You",
+      exp1_title: "Total Walkability",
+      exp1_desc: "Everything within minutes on foot — markets, restaurants, beaches, and the city center. No car needed, ever.",
+      exp2_title: "Galician Gastronomy",
+      exp2_desc: "Surrounded by pintxo bars, seafood tabernas, and Michelin-quality restaurants in the oldest quarter of the city.",
+      exp3_title: "Living History",
+      exp3_desc: "Roman ruins, medieval walls, and centuries-old granite architecture create an immersive cultural backdrop.",
+      exp4_title: "Atlantic Proximity",
+      exp4_desc: "The Ría de Vigo and its beaches are a short stroll away. Sunsets over the Cíes Islands are unforgettable.",
+      
+      // Reviews
+      rev_title: "Guest Voices",
+      rev_count: "From Our Visitors",
+      rev1_text: "\"The apartment was immaculate and perfectly located. We walked everywhere — to the market, to dinner, to the waterfront. The acoustic insulation was remarkable; total silence in the heart of the old town.\"",
+      rev1_author: "Maria C.",
+      rev1_from: "Barcelona, Spain",
+      rev2_text: "\"Worked remotely for two weeks from the penthouse. The fiber Wi-Fi never dropped, the workspace was thoughtfully designed, and watching sunsets over the Cíes Islands became my evening ritual.\"",
+      rev2_author: "James T.",
+      rev2_from: "London, UK",
+      rev3_text: "\"The minimalist aesthetic paired with premium amenities created an experience far beyond typical rentals. Self check-in was seamless, and Jose's recommendations for restaurants were outstanding.\"",
+      rev3_author: "Laura & Pierre",
+      rev3_from: "Lyon, France",
+      rev4_text: "\"Vigo's old town has an energy you can't find anywhere else in Galicia. This studio captures it perfectly — traditional stone exterior, sleek modern interior. We're already planning our return trip.\"",
+      rev4_author: "Anna S.",
+      rev4_from: "Berlin, Germany",
+      rev5_text: "\"We stayed five nights in the historic center studio and it exceeded every expectation. The city views from the window, the fully stocked kitchen, and the central yet quiet location were perfect.\"",
+      rev5_author: "Ricardo M.",
+      rev5_from: "Lisbon, Portugal",
+      rev6_text: "\"Everything was spotless, communication was instant, and the neighborhood felt alive but never noisy. The washer/dryer was a huge plus for our extended stay. Highly recommended.\"",
+      rev6_author: "Sophie W.",
+      rev6_from: "Amsterdam, Netherlands",
+      
+      // Location
+      loc_title: "Prime Location",
+      loc_count: "Casco Vello, Vigo",
+      loc_desc: "Nestled in the pedestrian-only historic quarter of Vigo, our apartments sit at the intersection of heritage and modern urban life. Cobblestone lanes lead to bustling terraces, fresh seafood markets, and the shimmering waterfront of the Ría de Vigo.",
+      loc_dist1_name: "Praia de Samil",
+      loc_dist1_val: "12 min by car",
+      loc_dist2_name: "Calle Príncipe (shopping)",
+      loc_dist2_val: "4 min walk",
+      loc_dist3_name: "Mercado da Pedra (oyster market)",
+      loc_dist3_val: "2 min walk",
+      loc_dist4_name: "Ferry to Cíes Islands",
+      loc_dist4_val: "8 min walk to port",
+      loc_dist5_name: "Vigo-Urzáiz Train Station",
+      loc_dist5_val: "10 min walk",
+      loc_dist6_name: "Vigo Airport (VGO)",
+      loc_dist6_val: "15 min by car",
+      
+      // Footer
+      footer_desc: "Four curated apartments in the pedestrian heart of Vigo's historic quarter. Designed for travelers who appreciate quiet luxury, walkability, and cultural immersion.",
+      footer_explore: "Explore",
+      footer_quick: "Quick Links",
+      footer_airbnb: "Book on Airbnb",
+      footer_vigo: "Visit Vigo",
+      footer_contact: "Contact & Host",
+      footer_managed: "Managed by",
+      footer_rights: "Casco Vello Stays. All rights reserved."
+    }
+  };
+
+  function setLanguage(lang) {
+    if (!translations[lang]) lang = 'es';
+    document.documentElement.lang = lang;
+    localStorage.setItem('casco_vello_lang', lang);
+
+    // Update document title & meta description
+    if (translations[lang].page_title) {
+      document.title = translations[lang].page_title;
+    }
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && translations[lang].meta_desc) {
+      metaDesc.setAttribute('content', translations[lang].meta_desc);
+    }
+
+    // Update text content
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key] !== undefined) {
+        el.textContent = translations[lang][key];
+      }
+    });
+
+    // Update HTML content
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (translations[lang][key] !== undefined) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+
+    // Update active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const isActive = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive);
+    });
+  }
+
+  // Bind Language switcher buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const selectedLang = btn.getAttribute('data-lang');
+      setLanguage(selectedLang);
+    });
+  });
+
+  // Initialize language (default: Spanish or stored preference)
+  const savedLang = localStorage.getItem('casco_vello_lang') || 'es';
+  setLanguage(savedLang);
 
   // ——— Page Loader ———
   const loader = document.querySelector('.page-loader');
@@ -50,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroHeight = document.querySelector('.hero')?.offsetHeight || 800;
     if (scrollTop < heroHeight) {
       const translateY = scrollTop * 0.35;
-      heroBgImg.style.transform = `translateY(${translateY}px) scale(1.1)`;
+      heroBgImg.style.transform = `translateY(${translateY}px) scale(1.08)`;
     }
   }
 
@@ -77,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.classList.toggle('active');
       nav.classList.toggle('open');
     });
-    // Close on link click
+    // Close on link click (except language switcher)
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -222,7 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
 
     function startAutoplay() {
-      autoplayInterval = setInterval(() => goTo(currentIndex + 1), 6000);
+      autoplayInterval = setInterval(() => goTo(currentIndex + 1), 7000);
     }
 
     function stopAutoplay() {
