@@ -17,9 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_meta: "Escapadas Urbanas Exclusivas • Vigo, España",
       hero_title: "Patrimonio Renovado.<br>Diseño y Confort Minimalista.",
       hero_sub: "Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo, diseñados para el descanso, el teletrabajo y el disfrute sin prisas.",
-      hero_btn_explore: "Explorar la Colección",
-      hero_btn_direct: "Acceso Directo Airbnb ↗",
       hero_scroll: "Desplazar",
+      
+      // Booking Mask
+      mask_unit_label: "Alojamiento",
+      mask_checkin_label: "Llegada",
+      mask_checkout_label: "Salida",
+      mask_guests_label: "Huéspedes",
+      mask_btn: "Buscar en Airbnb ↗",
+      mask_opt_1: "Estudio Plaza Tranquila (★ 5.0)",
+      mask_opt_2: "Estudio Casco Vello a Pie (★ 4.33)",
+      mask_opt_3: "Estudio Vistas Históricas (★ 5.0)",
+      mask_opt_4: "Ático Dúplex Vistas Mar (★ Nuevo)",
+      mask_guest_1: "1 Huésped",
+      mask_guest_2: "2 Huéspedes",
+      mask_guest_3: "3 Huéspedes",
+      mask_guest_4: "4 Huéspedes",
       
       collection_title: "Nuestros Alojamientos",
       collection_count: "4 Espacios Exclusivos",
@@ -159,9 +172,22 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_meta: "Exclusive Urban Escapes • Vigo, Spain",
       hero_title: "Restyled Heritage.<br>Uncompromising Minimalist Living.",
       hero_sub: "Four quiet-luxury apartments positioned in the pedestrian core of Casco Vello, crafted for long afternoons, remote work, and effortless exploration.",
-      hero_btn_explore: "Explore the Collection",
-      hero_btn_direct: "Direct Airbnb Access ↗",
       hero_scroll: "Scroll",
+      
+      // Booking Mask
+      mask_unit_label: "Apartment",
+      mask_checkin_label: "Check-in",
+      mask_checkout_label: "Check-out",
+      mask_guests_label: "Guests",
+      mask_btn: "Search on Airbnb ↗",
+      mask_opt_1: "Quiet Plaza Studio (★ 5.0)",
+      mask_opt_2: "Walkable Center Studio (★ 4.33)",
+      mask_opt_3: "Historic Views Studio (★ 5.0)",
+      mask_opt_4: "Sea View Duplex Penthouse (★ New)",
+      mask_guest_1: "1 Guest",
+      mask_guest_2: "2 Guests",
+      mask_guest_3: "3 Guests",
+      mask_guest_4: "4 Guests",
       
       collection_title: "The Collection",
       collection_count: "4 Curated Spaces",
@@ -342,6 +368,55 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize language (default: Spanish or stored preference)
   const savedLang = localStorage.getItem('casco_vello_lang') || 'es';
   setLanguage(savedLang);
+
+  // ——— Booking Mask (Buchungsmaske) Logic ———
+  const bookingForm = document.getElementById('hero-booking-form');
+  const checkinInput = document.getElementById('mask-checkin');
+  const checkoutInput = document.getElementById('mask-checkout');
+  const unitSelect = document.getElementById('mask-unit');
+  const guestsSelect = document.getElementById('mask-guests');
+
+  // Set min date to today
+  if (checkinInput && checkoutInput) {
+    const today = new Date().toISOString().split('T')[0];
+    checkinInput.setAttribute('min', today);
+    checkoutInput.setAttribute('min', today);
+
+    checkinInput.addEventListener('change', () => {
+      if (checkinInput.value) {
+        const nextDay = new Date(checkinInput.value);
+        nextDay.setDate(nextDay.getDate() + 1);
+        const minCheckout = nextDay.toISOString().split('T')[0];
+        checkoutInput.setAttribute('min', minCheckout);
+        if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
+          checkoutInput.value = minCheckout;
+        }
+      }
+    });
+  }
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const unitId = unitSelect ? unitSelect.value : '1445770978229507611';
+      const checkin = checkinInput ? checkinInput.value : '';
+      const checkout = checkoutInput ? checkoutInput.value : '';
+      const guests = guestsSelect ? guestsSelect.value : '2';
+
+      let airbnbUrl = `https://www.airbnb.com/rooms/${unitId}`;
+      const params = new URLSearchParams();
+      if (checkin) params.append('check_in', checkin);
+      if (checkout) params.append('check_out', checkout);
+      if (guests) params.append('adults', guests);
+
+      const queryString = params.toString();
+      if (queryString) {
+        airbnbUrl += `?${queryString}`;
+      }
+
+      window.open(airbnbUrl, '_blank', 'noopener,noreferrer');
+    });
+  }
 
   // ——— Direct Booking Modal Logic ———
   const bookingModal = document.getElementById('booking-modal');

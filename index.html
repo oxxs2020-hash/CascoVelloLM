@@ -62,10 +62,55 @@
       <span class="hero-meta" data-i18n="hero_meta">Escapadas Urbanas Exclusivas • Vigo, España</span>
       <h1 data-i18n-html="hero_title">Patrimonio Renovado.<br>Diseño y Confort Minimalista.</h1>
       <p class="hero-sub" data-i18n="hero_sub">Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo, diseñados para el descanso, el teletrabajo y el disfrute sin prisas.</p>
-      <div class="hero-cta-group">
-        <a href="#properties" class="btn-primary"><span data-i18n="hero_btn_explore">Explorar la Colección</span> <span>→</span></a>
-        <button type="button" class="btn-outline open-booking-modal" data-i18n="hero_btn_direct">Acceso Directo Airbnb ↗</button>
+      
+      <!-- Interactive Booking Mask (Buchungsmaske) -->
+      <div class="booking-mask-wrapper">
+        <form class="booking-mask" id="hero-booking-form">
+          <div class="mask-field">
+            <label class="mask-label" for="mask-unit">
+              <span>🏠</span> <span data-i18n="mask_unit_label">Alojamiento</span>
+            </label>
+            <select class="mask-select" id="mask-unit">
+              <option value="1445770978229507611" data-i18n="mask_opt_1">Estudio Plaza Tranquila (★ 5.0)</option>
+              <option value="1446491949902470890" data-i18n="mask_opt_2">Estudio Casco Vello a Pie (★ 4.33)</option>
+              <option value="1447210391464096148" data-i18n="mask_opt_3">Estudio Vistas Históricas (★ 5.0)</option>
+              <option value="1713892901407024322" data-i18n="mask_opt_4">Ático Dúplex Vistas Mar (★ Nuevo)</option>
+            </select>
+          </div>
+          
+          <div class="mask-field">
+            <label class="mask-label" for="mask-checkin">
+              <span>📅</span> <span data-i18n="mask_checkin_label">Llegada</span>
+            </label>
+            <input type="date" class="mask-input" id="mask-checkin" />
+          </div>
+
+          <div class="mask-field">
+            <label class="mask-label" for="mask-checkout">
+              <span>📅</span> <span data-i18n="mask_checkout_label">Salida</span>
+            </label>
+            <input type="date" class="mask-input" id="mask-checkout" />
+          </div>
+
+          <div class="mask-field">
+            <label class="mask-label" for="mask-guests">
+              <span>👥</span> <span data-i18n="mask_guests_label">Huéspedes</span>
+            </label>
+            <select class="mask-select" id="mask-guests">
+              <option value="1" data-i18n="mask_guest_1">1 Huésped</option>
+              <option value="2" selected data-i18n="mask_guest_2">2 Huéspedes</option>
+              <option value="3" data-i18n="mask_guest_3">3 Huéspedes</option>
+              <option value="4" data-i18n="mask_guest_4">4 Huéspedes</option>
+            </select>
+          </div>
+
+          <button type="submit" class="mask-submit-btn">
+            <svg width="17" height="17" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.982c2.231 4.148 5.61 10.96 6.643 13.916 1.488 4.254.402 7.781-2.484 9.873-1.921 1.391-4.321 1.96-6.721 1.636-2.148-.29-4.108-1.282-5.722-2.909-1.614 1.627-3.574 2.619-5.722 2.909-2.4.324-4.8-.245-6.721-1.636-2.886-2.092-3.972-5.619-2.484-9.873 1.033-2.956 4.412-9.768 6.643-13.916l.533-.982C12.537 1.963 13.992 1 16 1zm0 2c-1.428 0-2.474.654-3.488 2.457l-.544 1.002c-2.181 4.054-5.504 10.749-6.495 13.582-1.168 3.34-.338 5.864 1.764 7.387 1.439 1.042 3.255 1.455 5.047 1.213 2.036-.275 3.823-1.296 5.178-2.991l.538-.686.538.686c1.355 1.695 3.142 2.716 5.178 2.991 1.792.242 3.608-.171 5.047-1.213 2.102-1.523 2.932-4.047 1.764-7.387-.991-2.833-4.314-9.528-6.495-13.582l-.544-1.002C18.474 3.654 17.428 3 16 3zm0 11a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+            <span data-i18n="mask_btn">Buscar en Airbnb ↗</span>
+          </button>
+        </form>
       </div>
+
     </div>
     <div class="scroll-indicator">
       <span data-i18n="hero_scroll">Desplazar</span>
@@ -82,28 +127,28 @@
 
     <!-- Direct Airbnb Linking Ribbon -->
     <div class="direct-links-ribbon reveal">
-      <a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="direct-link-card" title="Abrir en Airbnb">
+      <a href="https://www.airbnb.com/rooms/1445770978229507611" target="_blank" rel="noopener noreferrer" class="direct-link-card" title="Abrir en Airbnb">
         <div class="unit-info">
           <span class="unit-num">Unidad 1</span>
           <span class="unit-name" data-i18n="ribbon_unit1">Estudio Plaza Tranquila</span>
         </div>
         <div class="unit-icon">↗</div>
       </a>
-      <a href="https://www.airbnb.com/rooms/1446491949902470890?unique_share_id=976ee7d6-397a-429d-a9ca-3c9260c3624c&viralityEntryPoint=1&s=76" target="_blank" class="direct-link-card" title="Abrir en Airbnb">
+      <a href="https://www.airbnb.com/rooms/1446491949902470890" target="_blank" rel="noopener noreferrer" class="direct-link-card" title="Abrir en Airbnb">
         <div class="unit-info">
           <span class="unit-num">Unidad 2</span>
           <span class="unit-name" data-i18n="ribbon_unit2">Estudio Casco Vello a Pie</span>
         </div>
         <div class="unit-icon">↗</div>
       </a>
-      <a href="https://www.airbnb.com/rooms/1447210391464096148?unique_share_id=55064be2-e6e5-43b4-8ab2-d7c998ba44e2&viralityEntryPoint=1&s=76" target="_blank" class="direct-link-card" title="Abrir en Airbnb">
+      <a href="https://www.airbnb.com/rooms/1447210391464096148" target="_blank" rel="noopener noreferrer" class="direct-link-card" title="Abrir en Airbnb">
         <div class="unit-info">
           <span class="unit-num">Unidad 3</span>
           <span class="unit-name" data-i18n="ribbon_unit3">Estudio Vistas Históricas</span>
         </div>
         <div class="unit-icon">↗</div>
       </a>
-      <a href="https://www.airbnb.com/rooms/1713892901407024322?unique_share_id=0c1c5f67-14f8-40ae-9056-1a334a82e947&viralityEntryPoint=1&s=76" target="_blank" class="direct-link-card" title="Abrir en Airbnb">
+      <a href="https://www.airbnb.com/rooms/1713892901407024322" target="_blank" rel="noopener noreferrer" class="direct-link-card" title="Abrir en Airbnb">
         <div class="unit-info">
           <span class="unit-num">Unidad 4</span>
           <span class="unit-name" data-i18n="ribbon_unit4">Ático Dúplex Vistas Mar</span>
@@ -143,7 +188,7 @@
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3><a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="card-title-link" data-i18n="card1_title">Estudio con Encanto en Pleno Casco Vello</a></h3>
+              <h3><a href="https://www.airbnb.com/rooms/1445770978229507611" target="_blank" rel="noopener noreferrer" class="card-title-link" data-i18n="card1_title">Estudio con Encanto en Pleno Casco Vello</a></h3>
             </div>
             <p class="card-desc" data-i18n="card1_desc">Estudio moderno en el casco histórico de Vigo, situado en una plaza tranquila sin tráfico rodado. Equipado con Wi-Fi fibra de alta velocidad, aire acondicionado, cama doble más sofá cama y cocina completa. Check-in online y autónomo.</p>
             <div class="amenities">
@@ -156,7 +201,7 @@
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="btn-airbnb">
+            <a href="https://www.airbnb.com/rooms/1445770978229507611" target="_blank" rel="noopener noreferrer" class="btn-airbnb">
               <svg width="15" height="15" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.982c2.231 4.148 5.61 10.96 6.643 13.916 1.488 4.254.402 7.781-2.484 9.873-1.921 1.391-4.321 1.96-6.721 1.636-2.148-.29-4.108-1.282-5.722-2.909-1.614 1.627-3.574 2.619-5.722 2.909-2.4.324-4.8-.245-6.721-1.636-2.886-2.092-3.972-5.619-2.484-9.873 1.033-2.956 4.412-9.768 6.643-13.916l.533-.982C12.537 1.963 13.992 1 16 1zm0 2c-1.428 0-2.474.654-3.488 2.457l-.544 1.002c-2.181 4.054-5.504 10.749-6.495 13.582-1.168 3.34-.338 5.864 1.764 7.387 1.439 1.042 3.255 1.455 5.047 1.213 2.036-.275 3.823-1.296 5.178-2.991l.538-.686.538.686c1.355 1.695 3.142 2.716 5.178 2.991 1.792.242 3.608-.171 5.047-1.213 2.102-1.523 2.932-4.047 1.764-7.387-.991-2.833-4.314-9.528-6.495-13.582l-.544-1.002C18.474 3.654 17.428 3 16 3zm0 11a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
               <span data-i18n="btn_book_airbnb">Reservar en Airbnb</span>
               <span class="arrow">↗</span>
@@ -194,7 +239,7 @@
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3><a href="https://www.airbnb.com/rooms/1446491949902470890?unique_share_id=976ee7d6-397a-429d-a9ca-3c9260c3624c&viralityEntryPoint=1&s=76" target="_blank" class="card-title-link" data-i18n="card2_title">Estudio Ideal para Disfrutar Vigo a Pie</a></h3>
+              <h3><a href="https://www.airbnb.com/rooms/1446491949902470890" target="_blank" rel="noopener noreferrer" class="card-title-link" data-i18n="card2_title">Estudio Ideal para Disfrutar Vigo a Pie</a></h3>
             </div>
             <p class="card-desc" data-i18n="card2_desc">Espacio moderno y acogedor en el Casco Vello. Dispone de Wi-Fi rápido, aire acondicionado, cocina equipada con lavavajillas, lavadora/secadora, cama doble y sofá cama en una plaza sin ruidos.</p>
             <div class="amenities">
@@ -207,7 +252,7 @@
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1446491949902470890?unique_share_id=976ee7d6-397a-429d-a9ca-3c9260c3624c&viralityEntryPoint=1&s=76" target="_blank" class="btn-airbnb">
+            <a href="https://www.airbnb.com/rooms/1446491949902470890" target="_blank" rel="noopener noreferrer" class="btn-airbnb">
               <svg width="15" height="15" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.982c2.231 4.148 5.61 10.96 6.643 13.916 1.488 4.254.402 7.781-2.484 9.873-1.921 1.391-4.321 1.96-6.721 1.636-2.148-.29-4.108-1.282-5.722-2.909-1.614 1.627-3.574 2.619-5.722 2.909-2.4.324-4.8-.245-6.721-1.636-2.886-2.092-3.972-5.619-2.484-9.873 1.033-2.956 4.412-9.768 6.643-13.916l.533-.982C12.537 1.963 13.992 1 16 1zm0 2c-1.428 0-2.474.654-3.488 2.457l-.544 1.002c-2.181 4.054-5.504 10.749-6.495 13.582-1.168 3.34-.338 5.864 1.764 7.387 1.439 1.042 3.255 1.455 5.047 1.213 2.036-.275 3.823-1.296 5.178-2.991l.538-.686.538.686c1.355 1.695 3.142 2.716 5.178 2.991 1.792.242 3.608-.171 5.047-1.213 2.102-1.523 2.932-4.047 1.764-7.387-.991-2.833-4.314-9.528-6.495-13.582l-.544-1.002C18.474 3.654 17.428 3 16 3zm0 11a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
               <span data-i18n="btn_book_airbnb">Reservar en Airbnb</span>
               <span class="arrow">↗</span>
@@ -245,7 +290,7 @@
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3><a href="https://www.airbnb.com/rooms/1447210391464096148?unique_share_id=55064be2-e6e5-43b4-8ab2-d7c998ba44e2&viralityEntryPoint=1&s=76" target="_blank" class="card-title-link" data-i18n="card3_title">Estudio Moderno y Luminoso con Vistas</a></h3>
+              <h3><a href="https://www.airbnb.com/rooms/1447210391464096148" target="_blank" rel="noopener noreferrer" class="card-title-link" data-i18n="card3_title">Estudio Moderno y Luminoso con Vistas</a></h3>
             </div>
             <p class="card-desc" data-i18n="card3_desc">Disfruta de una estancia especial en este luminoso estudio con vistas al casco histórico. Aislamiento acústico de primera, Wi-Fi fibra, aire acondicionado, lavavajillas, lavadora/secadora y cama doble más sofá.</p>
             <div class="amenities">
@@ -258,7 +303,7 @@
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1447210391464096148?unique_share_id=55064be2-e6e5-43b4-8ab2-d7c998ba44e2&viralityEntryPoint=1&s=76" target="_blank" class="btn-airbnb">
+            <a href="https://www.airbnb.com/rooms/1447210391464096148" target="_blank" rel="noopener noreferrer" class="btn-airbnb">
               <svg width="15" height="15" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.982c2.231 4.148 5.61 10.96 6.643 13.916 1.488 4.254.402 7.781-2.484 9.873-1.921 1.391-4.321 1.96-6.721 1.636-2.148-.29-4.108-1.282-5.722-2.909-1.614 1.627-3.574 2.619-5.722 2.909-2.4.324-4.8-.245-6.721-1.636-2.886-2.092-3.972-5.619-2.484-9.873 1.033-2.956 4.412-9.768 6.643-13.916l.533-.982C12.537 1.963 13.992 1 16 1zm0 2c-1.428 0-2.474.654-3.488 2.457l-.544 1.002c-2.181 4.054-5.504 10.749-6.495 13.582-1.168 3.34-.338 5.864 1.764 7.387 1.439 1.042 3.255 1.455 5.047 1.213 2.036-.275 3.823-1.296 5.178-2.991l.538-.686.538.686c1.355 1.695 3.142 2.716 5.178 2.991 1.792.242 3.608-.171 5.047-1.213 2.102-1.523 2.932-4.047 1.764-7.387-.991-2.833-4.314-9.528-6.495-13.582l-.544-1.002C18.474 3.654 17.428 3 16 3zm0 11a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
               <span data-i18n="btn_book_airbnb">Reservar en Airbnb</span>
               <span class="arrow">↗</span>
@@ -296,7 +341,7 @@
         <div class="card-content">
           <div>
             <div class="card-header">
-              <h3><a href="https://www.airbnb.com/rooms/1713892901407024322?unique_share_id=0c1c5f67-14f8-40ae-9056-1a334a82e947&viralityEntryPoint=1&s=76" target="_blank" class="card-title-link" data-i18n="card4_title">Espectacular Ático Dúplex con Vistas al Mar</a></h3>
+              <h3><a href="https://www.airbnb.com/rooms/1713892901407024322" target="_blank" rel="noopener noreferrer" class="card-title-link" data-i18n="card4_title">Espectacular Ático Dúplex con Vistas al Mar</a></h3>
             </div>
             <p class="card-desc" data-i18n="card4_desc">Ático dúplex moderno y muy luminoso en el corazón del Casco Vello con vistas a la ría y el océano Atlántico. Cama doble, espacio de trabajo dedicado, cocina completa y aire acondicionado frío/calor.</p>
             <div class="amenities">
@@ -309,7 +354,7 @@
           </div>
           <div class="card-footer">
             <span class="reg-tag">VUT-PO-0130318</span>
-            <a href="https://www.airbnb.com/rooms/1713892901407024322?unique_share_id=0c1c5f67-14f8-40ae-9056-1a334a82e947&viralityEntryPoint=1&s=76" target="_blank" class="btn-airbnb">
+            <a href="https://www.airbnb.com/rooms/1713892901407024322" target="_blank" rel="noopener noreferrer" class="btn-airbnb">
               <svg width="15" height="15" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.982c2.231 4.148 5.61 10.96 6.643 13.916 1.488 4.254.402 7.781-2.484 9.873-1.921 1.391-4.321 1.96-6.721 1.636-2.148-.29-4.108-1.282-5.722-2.909-1.614 1.627-3.574 2.619-5.722 2.909-2.4.324-4.8-.245-6.721-1.636-2.886-2.092-3.972-5.619-2.484-9.873 1.033-2.956 4.412-9.768 6.643-13.916l.533-.982C12.537 1.963 13.992 1 16 1zm0 2c-1.428 0-2.474.654-3.488 2.457l-.544 1.002c-2.181 4.054-5.504 10.749-6.495 13.582-1.168 3.34-.338 5.864 1.764 7.387 1.439 1.042 3.255 1.455 5.047 1.213 2.036-.275 3.823-1.296 5.178-2.991l.538-.686.538.686c1.355 1.695 3.142 2.716 5.178 2.991 1.792.242 3.608-.171 5.047-1.213 2.102-1.523 2.932-4.047 1.764-7.387-.991-2.833-4.314-9.528-6.495-13.582l-.544-1.002C18.474 3.654 17.428 3 16 3zm0 11a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
               <span data-i18n="btn_book_airbnb">Reservar en Airbnb</span>
               <span class="arrow">↗</span>
@@ -545,17 +590,17 @@
       <div class="footer-col">
         <h5 data-i18n="footer_quick">Enlaces Directos Airbnb</h5>
         <ul class="footer-links">
-          <li><a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" data-i18n="footer_unit1">1. Estudio Plaza Tranquila ↗</a></li>
-          <li><a href="https://www.airbnb.com/rooms/1446491949902470890?unique_share_id=976ee7d6-397a-429d-a9ca-3c9260c3624c&viralityEntryPoint=1&s=76" target="_blank" data-i18n="footer_unit2">2. Estudio Centro a Pie ↗</a></li>
-          <li><a href="https://www.airbnb.com/rooms/1447210391464096148?unique_share_id=55064be2-e6e5-43b4-8ab2-d7c998ba44e2&viralityEntryPoint=1&s=76" target="_blank" data-i18n="footer_unit3">3. Estudio Vistas Históricas ↗</a></li>
-          <li><a href="https://www.airbnb.com/rooms/1713892901407024322?unique_share_id=0c1c5f67-14f8-40ae-9056-1a334a82e947&viralityEntryPoint=1&s=76" target="_blank" data-i18n="footer_unit4">4. Ático Dúplex Vistas Mar ↗</a></li>
+          <li><a href="https://www.airbnb.com/rooms/1445770978229507611" target="_blank" rel="noopener noreferrer" data-i18n="footer_unit1">1. Estudio Plaza Tranquila ↗</a></li>
+          <li><a href="https://www.airbnb.com/rooms/1446491949902470890" target="_blank" rel="noopener noreferrer" data-i18n="footer_unit2">2. Estudio Centro a Pie ↗</a></li>
+          <li><a href="https://www.airbnb.com/rooms/1447210391464096148" target="_blank" rel="noopener noreferrer" data-i18n="footer_unit3">3. Estudio Vistas Históricas ↗</a></li>
+          <li><a href="https://www.airbnb.com/rooms/1713892901407024322" target="_blank" rel="noopener noreferrer" data-i18n="footer_unit4">4. Ático Dúplex Vistas Mar ↗</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5 data-i18n="footer_contact">Contacto y Anfitrión</h5>
         <p><span data-i18n="footer_managed">Gestionado por</span><br><strong>Jose Francisco</strong><br><span style="font-size: 0.85rem; opacity: 0.8;">CASCO VELLO REFORMAS SL</span><br><span style="font-size: 0.82rem; opacity: 0.7;">Rúa de Pi y Margall, 72, Vigo</span></p>
         <div class="social-links" style="margin-top: 16px;">
-          <a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="social-link" aria-label="Airbnb" title="Airbnb Listing">🏠</a>
+          <a href="https://www.airbnb.com/rooms/1445770978229507611" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Airbnb" title="Airbnb Listing">🏠</a>
           <a href="tel:+34615607988" class="social-link" aria-label="Teléfono" title="+34 615 60 79 88">📞</a>
           <a href="mailto:cascovello@agrogallery.com" class="social-link" aria-label="Email" title="cascovello@agrogallery.com">✉️</a>
         </div>
@@ -577,7 +622,7 @@
       </div>
       <div class="modal-units-list">
         
-        <a href="https://www.airbnb.com/rooms/1445770978229507611?unique_share_id=11cb76c8-9ea4-4c28-84cd-5b5943a03ca5&viralityEntryPoint=1&s=76" target="_blank" class="modal-unit-item">
+        <a href="https://www.airbnb.com/rooms/1445770978229507611" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
           <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/023731ff-117f-48bf-be92-5f783e1ec226.jpeg" alt="Unidad 1" class="modal-unit-thumb" />
           <div class="modal-unit-details">
             <h4 data-i18n="card1_title">Estudio con Encanto en Pleno Casco Vello</h4>
@@ -586,7 +631,7 @@
           <span class="modal-unit-btn"><span data-i18n="modal_btn">Reservar</span> ↗</span>
         </a>
 
-        <a href="https://www.airbnb.com/rooms/1446491949902470890?unique_share_id=976ee7d6-397a-429d-a9ca-3c9260c3624c&viralityEntryPoint=1&s=76" target="_blank" class="modal-unit-item">
+        <a href="https://www.airbnb.com/rooms/1446491949902470890" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
           <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/18b2b2c6-9a0d-4199-965c-abbe4dafd967.jpeg" alt="Unidad 2" class="modal-unit-thumb" />
           <div class="modal-unit-details">
             <h4 data-i18n="card2_title">Estudio Ideal para Disfrutar Vigo a Pie</h4>
@@ -595,7 +640,7 @@
           <span class="modal-unit-btn"><span data-i18n="modal_btn">Reservar</span> ↗</span>
         </a>
 
-        <a href="https://www.airbnb.com/rooms/1447210391464096148?unique_share_id=55064be2-e6e5-43b4-8ab2-d7c998ba44e2&viralityEntryPoint=1&s=76" target="_blank" class="modal-unit-item">
+        <a href="https://www.airbnb.com/rooms/1447210391464096148" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
           <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/9973f99f-0775-46d2-b11b-fe8d625685fd.jpeg" alt="Unidad 3" class="modal-unit-thumb" />
           <div class="modal-unit-details">
             <h4 data-i18n="card3_title">Estudio Moderno y Luminoso con Vistas</h4>
@@ -604,7 +649,7 @@
           <span class="modal-unit-btn"><span data-i18n="modal_btn">Reservar</span> ↗</span>
         </a>
 
-        <a href="https://www.airbnb.com/rooms/1713892901407024322?unique_share_id=0c1c5f67-14f8-40ae-9056-1a334a82e947&viralityEntryPoint=1&s=76" target="_blank" class="modal-unit-item">
+        <a href="https://www.airbnb.com/rooms/1713892901407024322" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
           <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/d3945402-a329-4031-9234-22156092fae6.jpeg" alt="Unidad 4" class="modal-unit-thumb" />
           <div class="modal-unit-details">
             <h4 data-i18n="card4_title">Espectacular Ático Dúplex con Vistas al Mar</h4>
