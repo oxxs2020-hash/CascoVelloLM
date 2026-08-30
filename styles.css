@@ -397,13 +397,28 @@ nav a:hover {
 }
 
 /* ============================================
-   BOOKING MASK (BUCHUNGSMASKE / WIDGET)
+   BOOKING SECTION (BUCHUNGSMASKE AT END OF PAGE)
    ============================================ */
+.booking-section {
+  padding: 120px var(--spacing-container);
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(212, 168, 83, 0.05) 0%, transparent 70%);
+  border-top: 1px solid var(--border);
+}
+
+.booking-section-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 580px;
+  margin: 14px 0 0 0;
+  font-weight: 300;
+}
+
 .booking-mask-wrapper {
   margin-top: 40px;
   position: relative;
   z-index: 10;
-  max-width: 1040px;
+  max-width: 1080px;
   width: 100%;
 }
 

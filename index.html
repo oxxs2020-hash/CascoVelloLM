@@ -47,12 +47,12 @@
         <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
       </div>
 
-      <!-- Direct Booking Trigger Button -->
-      <button type="button" class="nav-cta open-booking-modal" data-i18n="nav_cta">Reservar en Airbnb</button>
+      <!-- Direct Booking Nav CTA -->
+      <a href="#booking" class="nav-cta" data-i18n="nav_cta">Reservar</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Clean & Airy) -->
   <section class="hero" id="hero">
     <div class="hero-bg">
       <img src="assets/images/hero-bg.jpg" alt="Casco Vello histórico, Vigo" loading="eager" />
@@ -62,55 +62,10 @@
       <span class="hero-meta" data-i18n="hero_meta">Escapadas Urbanas Exclusivas • Vigo, España</span>
       <h1 data-i18n-html="hero_title">Patrimonio Renovado.<br>Diseño y Confort Minimalista.</h1>
       <p class="hero-sub" data-i18n="hero_sub">Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo, diseñados para el descanso, el teletrabajo y el disfrute sin prisas.</p>
-      
-      <!-- Interactive Booking Mask (Buchungsmaske) -->
-      <div class="booking-mask-wrapper">
-        <form class="booking-mask" id="hero-booking-form">
-          <div class="mask-field">
-            <label class="mask-label" for="mask-unit">
-              <span>🏠</span> <span data-i18n="mask_unit_label">Alojamiento</span>
-            </label>
-            <select class="mask-select" id="mask-unit">
-              <option value="1445770978229507611" data-i18n="mask_opt_1">Estudio Plaza Tranquila (★ 5.0)</option>
-              <option value="1446491949902470890" data-i18n="mask_opt_2">Estudio Casco Vello a Pie (★ 4.33)</option>
-              <option value="1447210391464096148" data-i18n="mask_opt_3">Estudio Vistas Históricas (★ 5.0)</option>
-              <option value="1713892901407024322" data-i18n="mask_opt_4">Ático Dúplex Vistas Mar (★ Nuevo)</option>
-            </select>
-          </div>
-          
-          <div class="mask-field">
-            <label class="mask-label" for="mask-checkin">
-              <span>📅</span> <span data-i18n="mask_checkin_label">Llegada</span>
-            </label>
-            <input type="date" class="mask-input" id="mask-checkin" />
-          </div>
-
-          <div class="mask-field">
-            <label class="mask-label" for="mask-checkout">
-              <span>📅</span> <span data-i18n="mask_checkout_label">Salida</span>
-            </label>
-            <input type="date" class="mask-input" id="mask-checkout" />
-          </div>
-
-          <div class="mask-field">
-            <label class="mask-label" for="mask-guests">
-              <span>👥</span> <span data-i18n="mask_guests_label">Huéspedes</span>
-            </label>
-            <select class="mask-select" id="mask-guests">
-              <option value="1" data-i18n="mask_guest_1">1 Huésped</option>
-              <option value="2" selected data-i18n="mask_guest_2">2 Huéspedes</option>
-              <option value="3" data-i18n="mask_guest_3">3 Huéspedes</option>
-              <option value="4" data-i18n="mask_guest_4">4 Huéspedes</option>
-            </select>
-          </div>
-
-          <button type="submit" class="mask-submit-btn">
-            <svg width="17" height="17" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.982c2.231 4.148 5.61 10.96 6.643 13.916 1.488 4.254.402 7.781-2.484 9.873-1.921 1.391-4.321 1.96-6.721 1.636-2.148-.29-4.108-1.282-5.722-2.909-1.614 1.627-3.574 2.619-5.722 2.909-2.4.324-4.8-.245-6.721-1.636-2.886-2.092-3.972-5.619-2.484-9.873 1.033-2.956 4.412-9.768 6.643-13.916l.533-.982C12.537 1.963 13.992 1 16 1zm0 2c-1.428 0-2.474.654-3.488 2.457l-.544 1.002c-2.181 4.054-5.504 10.749-6.495 13.582-1.168 3.34-.338 5.864 1.764 7.387 1.439 1.042 3.255 1.455 5.047 1.213 2.036-.275 3.823-1.296 5.178-2.991l.538-.686.538.686c1.355 1.695 3.142 2.716 5.178 2.991 1.792.242 3.608-.171 5.047-1.213 2.102-1.523 2.932-4.047 1.764-7.387-.991-2.833-4.314-9.528-6.495-13.582l-.544-1.002C18.474 3.654 17.428 3 16 3zm0 11a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
-            <span data-i18n="mask_btn">Buscar en Airbnb ↗</span>
-          </button>
-        </form>
+      <div class="hero-cta-group">
+        <a href="#properties" class="btn-primary"><span data-i18n="hero_btn_explore">Explorar la Colección</span> <span>→</span></a>
+        <a href="#booking" class="btn-outline" data-i18n="hero_btn_direct">Reservar Estancia ↗</a>
       </div>
-
     </div>
     <div class="scroll-indicator">
       <span data-i18n="hero_scroll">Desplazar</span>
@@ -320,7 +275,7 @@
               <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/d3945402-a329-4031-9234-22156092fae6.jpeg" alt="Ático dúplex con vistas al mar" loading="lazy" /></div>
               <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/87f4efd2-de80-42ab-9dfa-ae035e1ce90e.jpeg" alt="Salón dúplex amplio y luminoso" loading="lazy" /></div>
               <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/675eae26-5a1b-4907-806b-7d558ea779d8.jpeg" alt="Espacio de trabajo y luz natural" loading="lazy" /></div>
-              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/988a17d6-89e3-4879-90fa-d315e7e72d54.jpeg" alt="Cocina y distribución dúplex" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/988a17d6-89e3-4879-90fa-d315e7e72d54.jpeg" alt="Cocina y distribution dúplex" loading="lazy" /></div>
               <div class="carousel-slide"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/4c9c5d07-c576-48b6-a124-762639b38a8a.jpeg" alt="Cama doble en planta alta" loading="lazy" /></div>
             </div>
             <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
@@ -571,6 +526,62 @@
     </div>
   </section>
 
+  <!-- Dedicated Booking Section (Buchungsmaske at the End) -->
+  <section class="booking-section" id="booking">
+    <div class="section-header reveal">
+      <h2 data-i18n="booking_section_title">Reserva tu Estancia</h2>
+      <span class="section-count" data-i18n="booking_section_count">Disponibilidad Oficial</span>
+    </div>
+    <p class="booking-section-sub reveal" data-i18n="booking_section_sub">Selecciona tu apartamento preferido y fechas para comprobar disponibilidad en tiempo real y reservar de forma segura a través de Airbnb.</p>
+
+    <div class="booking-mask-wrapper reveal delay-1">
+      <form class="booking-mask" id="hero-booking-form">
+        <div class="mask-field">
+          <label class="mask-label" for="mask-unit">
+            <span>🏠</span> <span data-i18n="mask_unit_label">Alojamiento</span>
+          </label>
+          <select class="mask-select" id="mask-unit">
+            <option value="1445770978229507611" data-i18n="mask_opt_1">Estudio Plaza Tranquila (★ 5.0)</option>
+            <option value="1446491949902470890" data-i18n="mask_opt_2">Estudio Casco Vello a Pie (★ 4.33)</option>
+            <option value="1447210391464096148" data-i18n="mask_opt_3">Estudio Vistas Históricas (★ 5.0)</option>
+            <option value="1713892901407024322" data-i18n="mask_opt_4">Ático Dúplex Vistas Mar (★ Nuevo)</option>
+          </select>
+        </div>
+        
+        <div class="mask-field">
+          <label class="mask-label" for="mask-checkin">
+            <span>📅</span> <span data-i18n="mask_checkin_label">Llegada</span>
+          </label>
+          <input type="date" class="mask-input" id="mask-checkin" />
+        </div>
+
+        <div class="mask-field">
+          <label class="mask-label" for="mask-checkout">
+            <span>📅</span> <span data-i18n="mask_checkout_label">Salida</span>
+          </label>
+          <input type="date" class="mask-input" id="mask-checkout" />
+        </div>
+
+        <div class="mask-field">
+          <label class="mask-label" for="mask-guests">
+            <span>👥</span> <span data-i18n="mask_guests_label">Huéspedes</span>
+          </label>
+          <select class="mask-select" id="mask-guests">
+            <option value="1" data-i18n="mask_guest_1">1 Huésped</option>
+            <option value="2" selected data-i18n="mask_guest_2">2 Huéspedes</option>
+            <option value="3" data-i18n="mask_guest_3">3 Huéspedes</option>
+            <option value="4" data-i18n="mask_guest_4">4 Huéspedes</option>
+          </select>
+        </div>
+
+        <button type="submit" class="mask-submit-btn">
+          <svg width="17" height="17" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.982c2.231 4.148 5.61 10.96 6.643 13.916 1.488 4.254.402 7.781-2.484 9.873-1.921 1.391-4.321 1.96-6.721 1.636-2.148-.29-4.108-1.282-5.722-2.909-1.614 1.627-3.574 2.619-5.722 2.909-2.4.324-4.8-.245-6.721-1.636-2.886-2.092-3.972-5.619-2.484-9.873 1.033-2.956 4.412-9.768 6.643-13.916l.533-.982C12.537 1.963 13.992 1 16 1zm0 2c-1.428 0-2.474.654-3.488 2.457l-.544 1.002c-2.181 4.054-5.504 10.749-6.495 13.582-1.168 3.34-.338 5.864 1.764 7.387 1.439 1.042 3.255 1.455 5.047 1.213 2.036-.275 3.823-1.296 5.178-2.991l.538-.686.538.686c1.355 1.695 3.142 2.716 5.178 2.991 1.792.242 3.608-.171 5.047-1.213 2.102-1.523 2.932-4.047 1.764-7.387-.991-2.833-4.314-9.528-6.495-13.582l-.544-1.002C18.474 3.654 17.428 3 16 3zm0 11a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+          <span data-i18n="mask_btn">Buscar en Airbnb ↗</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-grid">
@@ -585,6 +596,7 @@
           <li><a href="#experience" data-i18n="nav_experience">Experiencia</a></li>
           <li><a href="#reviews" data-i18n="nav_reviews">Opiniones</a></li>
           <li><a href="#location" data-i18n="nav_location">Ubicación</a></li>
+          <li><a href="#booking" data-i18n="nav_cta">Reservar</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -611,56 +623,6 @@
       <p>Casco Vello, Vigo, Pontevedra, España</p>
     </div>
   </footer>
-
-  <!-- Direct Booking Modal -->
-  <div class="modal-overlay" id="booking-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-container">
-      <button type="button" class="modal-close" aria-label="Cerrar modal">&times;</button>
-      <div class="modal-header">
-        <h3 data-i18n="modal_title">Reserva Directa en Airbnb</h3>
-        <p data-i18n="modal_sub">Selecciona el apartamento que prefieras para acceder al calendario oficial de Airbnb:</p>
-      </div>
-      <div class="modal-units-list">
-        
-        <a href="https://www.airbnb.com/rooms/1445770978229507611" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
-          <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1445770978229507611/original/023731ff-117f-48bf-be92-5f783e1ec226.jpeg" alt="Unidad 1" class="modal-unit-thumb" />
-          <div class="modal-unit-details">
-            <h4 data-i18n="card1_title">Estudio con Encanto en Pleno Casco Vello</h4>
-            <span data-i18n="modal_unit1_meta">Plaza tranquila · ★ 5.0 (1 opinión) · VUT-PO-0130318</span>
-          </div>
-          <span class="modal-unit-btn"><span data-i18n="modal_btn">Reservar</span> ↗</span>
-        </a>
-
-        <a href="https://www.airbnb.com/rooms/1446491949902470890" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
-          <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1446491949902470890/original/18b2b2c6-9a0d-4199-965c-abbe4dafd967.jpeg" alt="Unidad 2" class="modal-unit-thumb" />
-          <div class="modal-unit-details">
-            <h4 data-i18n="card2_title">Estudio Ideal para Disfrutar Vigo a Pie</h4>
-            <span data-i18n="modal_unit2_meta">Ubicación céntrica · ★ 4.33 (3 opiniones) · VUT-PO-0130318</span>
-          </div>
-          <span class="modal-unit-btn"><span data-i18n="modal_btn">Reservar</span> ↗</span>
-        </a>
-
-        <a href="https://www.airbnb.com/rooms/1447210391464096148" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
-          <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1447210391464096148/original/9973f99f-0775-46d2-b11b-fe8d625685fd.jpeg" alt="Unidad 3" class="modal-unit-thumb" />
-          <div class="modal-unit-details">
-            <h4 data-i18n="card3_title">Estudio Moderno y Luminoso con Vistas</h4>
-            <span data-i18n="modal_unit3_meta">Vistas históricas · ★ 5.0 (2 opiniones) · VUT-PO-0130318</span>
-          </div>
-          <span class="modal-unit-btn"><span data-i18n="modal_btn">Reservar</span> ↗</span>
-        </a>
-
-        <a href="https://www.airbnb.com/rooms/1713892901407024322" target="_blank" rel="noopener noreferrer" class="modal-unit-item">
-          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1713892901407024322/original/d3945402-a329-4031-9234-22156092fae6.jpeg" alt="Unidad 4" class="modal-unit-thumb" />
-          <div class="modal-unit-details">
-            <h4 data-i18n="card4_title">Espectacular Ático Dúplex con Vistas al Mar</h4>
-            <span data-i18n="modal_unit4_meta">Ático dúplex · Vistas Atlántico · VUT-PO-0130318</span>
-          </div>
-          <span class="modal-unit-btn"><span data-i18n="modal_btn">Reservar</span> ↗</span>
-        </a>
-
-      </div>
-    </div>
-  </div>
 
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Volver arriba">↑</button>

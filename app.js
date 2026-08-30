@@ -13,13 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Experiencia",
       nav_reviews: "Opiniones",
       nav_location: "Ubicación",
-      nav_cta: "Reservar en Airbnb",
+      nav_cta: "Reservar",
       hero_meta: "Escapadas Urbanas Exclusivas • Vigo, España",
       hero_title: "Patrimonio Renovado.<br>Diseño y Confort Minimalista.",
       hero_sub: "Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo, diseñados para el descanso, el teletrabajo y el disfrute sin prisas.",
+      hero_btn_explore: "Explorar la Colección",
+      hero_btn_direct: "Reservar Estancia ↗",
       hero_scroll: "Desplazar",
       
-      // Booking Mask
+      // Booking Section (at the end)
+      booking_section_title: "Reserva tu Estancia",
+      booking_section_count: "Disponibilidad Oficial",
+      booking_section_sub: "Selecciona tu apartamento preferido y fechas para comprobar disponibilidad en tiempo real y reservar de forma segura a través de Airbnb.",
+      
+      // Booking Mask Fields
       mask_unit_label: "Alojamiento",
       mask_checkin_label: "Llegada",
       mask_checkout_label: "Salida",
@@ -150,16 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_unit4: "4. Ático Dúplex Vistas Mar ↗",
       footer_contact: "Contacto y Anfitrión",
       footer_managed: "Gestionado por",
-      footer_rights: "Casco Vello Stays. Todos los derechos reservados.",
-      
-      // Modal
-      modal_title: "Reserva Directa en Airbnb",
-      modal_sub: "Selecciona el apartamento que prefieras para acceder al calendario oficial de Airbnb:",
-      modal_btn: "Reservar",
-      modal_unit1_meta: "Plaza tranquila · ★ 5.0 (1 opinión) · VUT-PO-0130318",
-      modal_unit2_meta: "Ubicación céntrica · ★ 4.33 (3 opiniones) · VUT-PO-0130318",
-      modal_unit3_meta: "Vistas históricas · ★ 5.0 (2 opiniones) · VUT-PO-0130318",
-      modal_unit4_meta: "Ático dúplex · Vistas Atlántico · VUT-PO-0130318"
+      footer_rights: "Casco Vello Stays. Todos los derechos reservados."
     },
     en: {
       page_title: "Casco Vello Residences | Luxury Stays in Vigo, Spain",
@@ -168,13 +166,20 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Experience",
       nav_reviews: "Reviews",
       nav_location: "Location",
-      nav_cta: "Book on Airbnb",
+      nav_cta: "Book Now",
       hero_meta: "Exclusive Urban Escapes • Vigo, Spain",
       hero_title: "Restyled Heritage.<br>Uncompromising Minimalist Living.",
       hero_sub: "Four quiet-luxury apartments positioned in the pedestrian core of Casco Vello, crafted for long afternoons, remote work, and effortless exploration.",
+      hero_btn_explore: "Explore the Collection",
+      hero_btn_direct: "Book Your Stay ↗",
       hero_scroll: "Scroll",
       
-      // Booking Mask
+      // Booking Section (at the end)
+      booking_section_title: "Book Your Stay",
+      booking_section_count: "Official Availability",
+      booking_section_sub: "Select your preferred apartment and dates to verify real-time availability and book securely directly on Airbnb.",
+      
+      // Booking Mask Fields
       mask_unit_label: "Apartment",
       mask_checkin_label: "Check-in",
       mask_checkout_label: "Check-out",
@@ -305,16 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_unit4: "4. Sea View Duplex Penthouse ↗",
       footer_contact: "Contact & Host",
       footer_managed: "Managed by",
-      footer_rights: "Casco Vello Stays. All rights reserved.",
-      
-      // Modal
-      modal_title: "Direct Booking on Airbnb",
-      modal_sub: "Select your preferred apartment to access the official Airbnb calendar:",
-      modal_btn: "Book Now",
-      modal_unit1_meta: "Quiet plaza · ★ 5.0 (1 review) · VUT-PO-0130318",
-      modal_unit2_meta: "Prime location · ★ 4.33 (3 reviews) · VUT-PO-0130318",
-      modal_unit3_meta: "Historic views · ★ 5.0 (2 reviews) · VUT-PO-0130318",
-      modal_unit4_meta: "Duplex penthouse · Atlantic views · VUT-PO-0130318"
+      footer_rights: "Casco Vello Stays. All rights reserved."
     }
   };
 
@@ -418,46 +414,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ——— Direct Booking Modal Logic ———
-  const bookingModal = document.getElementById('booking-modal');
-  const openModalBtns = document.querySelectorAll('.open-booking-modal');
-  const closeModalBtn = document.querySelector('.modal-close');
-
-  function openModal() {
-    if (bookingModal) {
-      bookingModal.classList.add('open');
-      bookingModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeModal() {
-    if (bookingModal) {
-      bookingModal.classList.remove('open');
-      bookingModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-  }
-
-  openModalBtns.forEach(btn => btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openModal();
-  }));
-
-  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-
-  if (bookingModal) {
-    bookingModal.addEventListener('click', (e) => {
-      if (e.target === bookingModal) closeModal();
-    });
-  }
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-
   // ——— Page Loader ———
   const loader = document.querySelector('.page-loader');
   if (loader) {
@@ -531,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.classList.toggle('active');
       nav.classList.toggle('open');
     });
-    // Close on link click (except language switcher or buttons)
+    // Close on link click (except language switcher)
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
