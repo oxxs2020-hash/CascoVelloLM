@@ -21,7 +21,43 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_btn_direct: "Reservar Estancia ↗",
       hero_scroll: "Desplazar",
       
-      // Booking Section (at the end)
+      // Storytelling Section
+      story_section_title: "El Carácter de Casco Vello",
+      story_section_count: "Detalles de Autor",
+      story1_title: "Piedra Noble & Silencio",
+      story1_desc: "Muros de sillería de granito gallego del siglo XIX restaurados con carpintería acústica de triple junta para garantizar paz absoluta en pleno casco histórico.",
+      story2_title: "Luz Atlántica & Galerías",
+      story2_desc: "Galerías acristaladas de madera blanca y orientación solar pensada para bañar los interiores de luz natural y disfrutar de las puestas de sol sobre la Ría.",
+      story3_title: "Fibra 600M & Teletrabajo",
+      story3_desc: "Conexión ultrarrápida de fibra simétrica y espacios de trabajo dedicados con luz directa para nómadas digitales y estancias prolongadas de trabajo.",
+      story4_title: "Check-in Autónomo 24/7",
+      story4_desc: "Cerraduras electrónicas inteligentes de alta seguridad con apertura digital y check-in online para llegar a la hora que desees sin esperas ni llaves físicas.",
+
+      // Comparison Section
+      comp_section_title: "Compara y Elige tu Estancia",
+      comp_section_count: "4 Opciones Únicas",
+      comp_th_feature: "Característica",
+      comp_row_views: "Vistas",
+      comp_row_type: "Tipo & Espacio",
+      comp_row_cap: "Capacidad",
+      comp_row_kitchen: "Cocina & Equipamiento",
+      comp_row_rating: "Opiniones",
+      comp_row_book: "Disponibilidad",
+      comp_u1_view: "Plaza peatonal tranquila",
+      comp_u2_view: "Casco Vello peatonal",
+      comp_u3_view: "Tejados y Casco Histórico",
+      comp_u4_view: "Ría de Vigo y Océano",
+      comp_u1_type: "Estudio / 1 Baño",
+      comp_u2_type: "Estudio / 1 Baño",
+      comp_u3_type: "Estudio / 1 Baño",
+      comp_u4_type: "Dúplex 2 Plantas / 1 Baño",
+      comp_u1_kit: "Cocina completa equipada",
+      comp_u2_kit: "Lavavajillas + Lavadora/Secadora",
+      comp_u3_kit: "Lavavajillas + Lavadora/Secadora",
+      comp_u4_kit: "Cocina completa + Workspace",
+      btn_book_now: "Reservar ↗",
+
+      // Booking Section
       booking_section_title: "Reserva tu Estancia",
       booking_section_count: "Disponibilidad Oficial",
       booking_section_sub: "Selecciona tu apartamento preferido y fechas para comprobar disponibilidad en tiempo real y reservar de forma segura a través de Airbnb.",
@@ -40,6 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
       mask_guest_2: "2 Huéspedes",
       mask_guest_3: "3 Huéspedes",
       mask_guest_4: "4 Huéspedes",
+      
+      // Summary Box
+      summary_badge: "✨ Fechas Flexibles",
+      summary_dates_hint: "Elige tus fechas para calcular estancia en tiempo real",
+      trust_license: "VUT-PO-0130318",
+      trust_rating: "Valoración 5.0",
+      btn_whatsapp: "WhatsApp Directo",
       
       collection_title: "Nuestros Alojamientos",
       collection_count: "4 Espacios Exclusivos",
@@ -184,7 +227,43 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_btn_direct: "Book Your Stay ↗",
       hero_scroll: "Scroll",
       
-      // Booking Section (at the end)
+      // Storytelling Section
+      story_section_title: "The Casco Vello Essence",
+      story_section_count: "Curated Craftsmanship",
+      story1_title: "Noble Granite & Silence",
+      story1_desc: "19th-century restored Galician granite masonry paired with triple-glazed acoustic joinery for absolute tranquility in the historic quarter.",
+      story2_title: "Atlantic Light & Balconies",
+      story2_desc: "White wooden glass galerías oriented to maximize natural sunshine and frame mesmerizing Atlantic sunsets over the Ría de Vigo.",
+      story3_title: "600M Fiber & Remote Work",
+      story3_desc: "High-speed symmetric fiber Wi-Fi and sunlit dedicated workspaces designed for digital nomads and productive extended stays.",
+      story4_title: "24/7 Keyless Check-in",
+      story4_desc: "Smart digital electronic locks and seamless online check-in to arrive whenever you wish with zero delays or physical keys.",
+
+      // Comparison Section
+      comp_section_title: "Compare & Choose Your Stay",
+      comp_section_count: "4 Unique Stays",
+      comp_th_feature: "Feature",
+      comp_row_views: "Views",
+      comp_row_type: "Space & Layout",
+      comp_row_cap: "Capacity",
+      comp_row_kitchen: "Kitchen & Laundry",
+      comp_row_rating: "Reviews",
+      comp_row_book: "Availability",
+      comp_u1_view: "Quiet pedestrian plaza",
+      comp_u2_view: "Pedestrian Casco Vello",
+      comp_u3_view: "Old Town & rooftops",
+      comp_u4_view: "Ría de Vigo & ocean",
+      comp_u1_type: "Studio / 1 Bath",
+      comp_u2_type: "Studio / 1 Bath",
+      comp_u3_type: "Studio / 1 Bath",
+      comp_u4_type: "2-Floor Duplex / 1 Bath",
+      comp_u1_kit: "Fully equipped kitchen",
+      comp_u2_kit: "Dishwasher + Washer/Dryer",
+      comp_u3_kit: "Dishwasher + Washer/Dryer",
+      comp_u4_kit: "Designer kitchen + Workspace",
+      btn_book_now: "Book ↗",
+
+      // Booking Section
       booking_section_title: "Book Your Stay",
       booking_section_count: "Official Availability",
       booking_section_sub: "Select your preferred apartment and dates to verify real-time availability and book securely directly on Airbnb.",
@@ -203,6 +282,13 @@ document.addEventListener('DOMContentLoaded', () => {
       mask_guest_2: "2 Guests",
       mask_guest_3: "3 Guests",
       mask_guest_4: "4 Guests",
+      
+      // Summary Box
+      summary_badge: "✨ Flexible Dates",
+      summary_dates_hint: "Pick dates to calculate stay in real time",
+      trust_license: "VUT-PO-0130318",
+      trust_rating: "5.0 Rating",
+      btn_whatsapp: "Direct WhatsApp",
       
       collection_title: "The Collection",
       collection_count: "4 Curated Spaces",
@@ -402,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(savedLang);
 
   // ——— Skiper UI Spotlight Cursor Effect ———
-  const spotlightElements = document.querySelectorAll('.card, .exp-card, .testimonial-card, .direct-link-card, .booking-mask, .distance-item');
+  const spotlightElements = document.querySelectorAll('.card, .exp-card, .testimonial-card, .direct-link-card, .booking-mask, .distance-item, .story-card');
   spotlightElements.forEach(el => {
     el.addEventListener('mousemove', (e) => {
       const rect = el.getBoundingClientRect();
@@ -643,12 +729,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ——— Booking Mask (Buchungsmaske) Logic ———
+  // ——— Booking Mask (Buchungsmaske) Logic & Live Estimator ———
   const bookingForm = document.getElementById('hero-booking-form');
   const checkinInput = document.getElementById('mask-checkin');
   const checkoutInput = document.getElementById('mask-checkout');
   const unitSelect = document.getElementById('mask-unit');
   const guestsSelect = document.getElementById('mask-guests');
+  const nightsBadge = document.getElementById('booking-nights-badge');
+  const datesText = document.getElementById('booking-dates-text');
+
+  function updateNightsSummary() {
+    if (!checkinInput || !checkoutInput) return;
+    const inVal = checkinInput.value;
+    const outVal = checkoutInput.value;
+    const lang = localStorage.getItem('casco_vello_lang') || 'es';
+
+    if (inVal && outVal && outVal > inVal) {
+      const d1 = new Date(inVal);
+      const d2 = new Date(outVal);
+      const nights = Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+
+      if (nightsBadge) {
+        nightsBadge.textContent = lang === 'es' ? `✨ ${nights} ${nights === 1 ? 'Noche' : 'Noches'}` : `✨ ${nights} ${nights === 1 ? 'Night' : 'Nights'}`;
+      }
+      if (datesText) {
+        const opt = { day: 'numeric', month: 'short' };
+        datesText.textContent = `${d1.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', opt)} — ${d2.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', opt)}`;
+      }
+    }
+  }
 
   // Set min date to today
   if (checkinInput && checkoutInput) {
@@ -665,8 +774,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
           checkoutInput.value = minCheckout;
         }
+        updateNightsSummary();
       }
     });
+
+    checkoutInput.addEventListener('change', updateNightsSummary);
   }
 
   if (bookingForm) {
