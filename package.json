@@ -1,0 +1,9 @@
+{
+  "name": "casco-vello-stays",
+  "version": "1.0.0",
+  "description": "Luxury vacation rental landing page for Casco Vello, Vigo",
+  "scripts": {
+    "dev": "npx -y live-server --port=3000 --no-browser"
+  },
+  "private": true
+}
