@@ -13,16 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Experiencia",
       nav_reviews: "Opiniones",
       nav_location: "Ubicación",
-      nav_cta: "Reservar",
+      nav_cta: "Reservar en Airbnb",
       hero_meta: "Escapadas Urbanas Exclusivas • Vigo, España",
       hero_title: "Patrimonio Renovado.<br>Diseño y Confort Minimalista.",
       hero_sub: "Cuatro apartamentos de lujo sereno en el corazón peatonal del Casco Vello de Vigo, diseñados para el descanso, el teletrabajo y el disfrute sin prisas.",
       hero_btn_explore: "Explorar la Colección",
-      hero_btn_discover: "Descubrir la Zona",
+      hero_btn_direct: "Acceso Directo Airbnb ↗",
       hero_scroll: "Desplazar",
       
       collection_title: "Nuestros Alojamientos",
       collection_count: "4 Espacios Exclusivos",
+      
+      // Direct Links Ribbon
+      ribbon_unit1: "Estudio Plaza Tranquila",
+      ribbon_unit2: "Estudio Casco Vello a Pie",
+      ribbon_unit3: "Estudio Vistas Históricas",
+      ribbon_unit4: "Ático Dúplex Vistas Mar",
       
       // Card 1
       card1_badge_view: "Plaza Tranquila",
@@ -34,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card1_tag3: "Aire Acondicionado",
       card1_tag4: "Cocina Equipada",
       card1_tag5: "Check-in Autónomo",
-      card1_reserve: "Reservar",
       
       // Card 2
       card2_badge_view: "Máxima Comodidad",
@@ -46,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card2_tag3: "Lavadora / Secadora",
       card2_tag4: "Cama Doble + Sofá",
       card2_tag5: "Aire Acondicionado",
-      card2_reserve: "Reservar",
       
       // Card 3
       card3_badge_view: "Vistas Casco Histórico",
@@ -58,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card3_tag3: "Lavavajillas",
       card3_tag4: "Lavadora / Secadora",
       card3_tag5: "Wi-Fi Rápido",
-      card3_reserve: "Reservar",
       
       // Card 4
       card4_badge_view: "Ático Dúplex",
@@ -70,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card4_tag3: "Espacio de Trabajo",
       card4_tag4: "A/C Frío / Calor",
       card4_tag5: "Wi-Fi Rápido",
-      card4_reserve: "Reservar",
+      
+      btn_book_airbnb: "Reservar en Airbnb",
       
       // Experience
       exp_title: "La Experiencia Casco Vello",
@@ -126,12 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // Footer
       footer_desc: "Cuatro apartamentos exclusivos en el corazón peatonal del casco histórico de Vigo. Diseñados para viajeros que valoran el confort, la calma y la autenticidad.",
       footer_explore: "Explorar",
-      footer_quick: "Enlaces Rápidos",
-      footer_airbnb: "Reservar en Airbnb",
-      footer_vigo: "Turismo de Vigo",
+      footer_quick: "Enlaces Directos Airbnb",
+      footer_unit1: "1. Estudio Plaza Tranquila ↗",
+      footer_unit2: "2. Estudio Centro a Pie ↗",
+      footer_unit3: "3. Estudio Vistas Históricas ↗",
+      footer_unit4: "4. Ático Dúplex Vistas Mar ↗",
       footer_contact: "Contacto y Anfitrión",
       footer_managed: "Gestionado por",
-      footer_rights: "Casco Vello Stays. Todos los derechos reservados."
+      footer_rights: "Casco Vello Stays. Todos los derechos reservados.",
+      
+      // Modal
+      modal_title: "Reserva Directa en Airbnb",
+      modal_sub: "Selecciona el apartamento que prefieras para acceder al calendario oficial de Airbnb:",
+      modal_btn: "Reservar",
+      modal_unit1_meta: "Plaza tranquila · ★ 5.0 (1 opinión) · VUT-PO-0130318",
+      modal_unit2_meta: "Ubicación céntrica · ★ 4.33 (3 opiniones) · VUT-PO-0130318",
+      modal_unit3_meta: "Vistas históricas · ★ 5.0 (2 opiniones) · VUT-PO-0130318",
+      modal_unit4_meta: "Ático dúplex · Vistas Atlántico · VUT-PO-0130318"
     },
     en: {
       page_title: "Casco Vello Residences | Luxury Stays in Vigo, Spain",
@@ -140,16 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Experience",
       nav_reviews: "Reviews",
       nav_location: "Location",
-      nav_cta: "Reserve",
+      nav_cta: "Book on Airbnb",
       hero_meta: "Exclusive Urban Escapes • Vigo, Spain",
       hero_title: "Restyled Heritage.<br>Uncompromising Minimalist Living.",
       hero_sub: "Four quiet-luxury apartments positioned in the pedestrian core of Casco Vello, crafted for long afternoons, remote work, and effortless exploration.",
       hero_btn_explore: "Explore the Collection",
-      hero_btn_discover: "Discover the Area",
+      hero_btn_direct: "Direct Airbnb Access ↗",
       hero_scroll: "Scroll",
       
       collection_title: "The Collection",
       collection_count: "4 Curated Spaces",
+      
+      // Direct Links Ribbon
+      ribbon_unit1: "Quiet Plaza Studio",
+      ribbon_unit2: "Walkable Center Studio",
+      ribbon_unit3: "Historic Views Studio",
+      ribbon_unit4: "Sea View Duplex Penthouse",
       
       // Card 1
       card1_badge_view: "Quiet Plaza",
@@ -161,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card1_tag3: "Air Conditioning",
       card1_tag4: "Equipped Kitchen",
       card1_tag5: "Self Check-in",
-      card1_reserve: "Reserve",
       
       // Card 2
       card2_badge_view: "Prime Walkability",
@@ -173,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card2_tag3: "Washer / Dryer",
       card2_tag4: "Double Bed + Sofa",
       card2_tag5: "Air Conditioning",
-      card2_reserve: "Reserve",
       
       // Card 3
       card3_badge_view: "Historic Views",
@@ -185,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card3_tag3: "Dishwasher",
       card3_tag4: "Washer / Dryer",
       card3_tag5: "Fast Wi-Fi",
-      card3_reserve: "Reserve",
       
       // Card 4
       card4_badge_view: "Duplex Penthouse",
@@ -197,7 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card4_tag3: "Dedicated Workspace",
       card4_tag4: "Hot / Cold A/C",
       card4_tag5: "Fast Wi-Fi",
-      card4_reserve: "Reserve",
+      
+      btn_book_airbnb: "Book on Airbnb",
       
       // Experience
       exp_title: "The Casco Vello Experience",
@@ -253,12 +272,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // Footer
       footer_desc: "Four curated apartments in the pedestrian heart of Vigo's historic quarter. Designed for travelers who appreciate quiet luxury, walkability, and cultural immersion.",
       footer_explore: "Explore",
-      footer_quick: "Quick Links",
-      footer_airbnb: "Book on Airbnb",
-      footer_vigo: "Visit Vigo",
+      footer_quick: "Direct Airbnb Links",
+      footer_unit1: "1. Quiet Plaza Studio ↗",
+      footer_unit2: "2. Walkable Center Studio ↗",
+      footer_unit3: "3. Historic Views Studio ↗",
+      footer_unit4: "4. Sea View Duplex Penthouse ↗",
       footer_contact: "Contact & Host",
       footer_managed: "Managed by",
-      footer_rights: "Casco Vello Stays. All rights reserved."
+      footer_rights: "Casco Vello Stays. All rights reserved.",
+      
+      // Modal
+      modal_title: "Direct Booking on Airbnb",
+      modal_sub: "Select your preferred apartment to access the official Airbnb calendar:",
+      modal_btn: "Book Now",
+      modal_unit1_meta: "Quiet plaza · ★ 5.0 (1 review) · VUT-PO-0130318",
+      modal_unit2_meta: "Prime location · ★ 4.33 (3 reviews) · VUT-PO-0130318",
+      modal_unit3_meta: "Historic views · ★ 5.0 (2 reviews) · VUT-PO-0130318",
+      modal_unit4_meta: "Duplex penthouse · Atlantic views · VUT-PO-0130318"
     }
   };
 
@@ -312,6 +342,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize language (default: Spanish or stored preference)
   const savedLang = localStorage.getItem('casco_vello_lang') || 'es';
   setLanguage(savedLang);
+
+  // ——— Direct Booking Modal Logic ———
+  const bookingModal = document.getElementById('booking-modal');
+  const openModalBtns = document.querySelectorAll('.open-booking-modal');
+  const closeModalBtn = document.querySelector('.modal-close');
+
+  function openModal() {
+    if (bookingModal) {
+      bookingModal.classList.add('open');
+      bookingModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeModal() {
+    if (bookingModal) {
+      bookingModal.classList.remove('open');
+      bookingModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  openModalBtns.forEach(btn => btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  }));
+
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+  if (bookingModal) {
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) closeModal();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('open')) {
+      closeModal();
+    }
+  });
 
   // ——— Page Loader ———
   const loader = document.querySelector('.page-loader');
@@ -386,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.classList.toggle('active');
       nav.classList.toggle('open');
     });
-    // Close on link click (except language switcher)
+    // Close on link click (except language switcher or buttons)
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -399,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      if (targetId === '#' || targetId === '') return;
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
