@@ -130,10 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
       rev6_author: "Sophie W.",
       rev6_from: "Ámsterdam, Países Bajos",
       
-      // Location
+      // Location & Map
       loc_title: "Ubicación Privilegiada",
       loc_count: "Casco Vello, Vigo",
       loc_desc: "Situados en la zona histórica peatonal de Vigo, nuestros apartamentos se encuentran donde confluyen el patrimonio y la vida urbana contemporánea. Calles empedradas que llevan a terrazas acogedoras, mercados de marisco fresco y el paseo marítimo de la Ría de Vigo.",
+      loc_dist0_name: "Casco Vello Residences (Nuestros Alojamientos)",
+      loc_dist0_val: "Rúa de Pi y Margall / Praza",
       loc_dist1_name: "Praia de Samil (Playa)",
       loc_dist1_val: "12 min en coche",
       loc_dist2_name: "Calle Príncipe (zona comercial)",
@@ -146,6 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_dist5_val: "10 min a pie",
       loc_dist6_name: "Aeropuerto de Vigo (VGO)",
       loc_dist6_val: "15 min en coche",
+      map_location_name: "Casco Vello, Vigo (Galicia)",
+      map_btn_center: "📍 Centrar",
+      map_btn_gmaps: "Google Maps ↗",
       
       // Footer
       footer_desc: "Cuatro apartamentos exclusivos en el corazón peatonal del casco histórico de Vigo. Diseñados para viajeros que valoran el confort, la calma y la autenticidad.",
@@ -283,10 +288,12 @@ document.addEventListener('DOMContentLoaded', () => {
       rev6_author: "Sophie W.",
       rev6_from: "Amsterdam, Netherlands",
       
-      // Location
+      // Location & Map
       loc_title: "Prime Location",
       loc_count: "Casco Vello, Vigo",
       loc_desc: "Nestled in the pedestrian-only historic quarter of Vigo, our apartments sit at the intersection of heritage and modern urban life. Cobblestone lanes lead to bustling terraces, fresh seafood markets, and the shimmering waterfront of the Ría de Vigo.",
+      loc_dist0_name: "Casco Vello Residences (Our Apartments)",
+      loc_dist0_val: "Rúa de Pi y Margall / Plaza",
       loc_dist1_name: "Praia de Samil",
       loc_dist1_val: "12 min by car",
       loc_dist2_name: "Calle Príncipe (shopping)",
@@ -299,6 +306,9 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_dist5_val: "10 min walk",
       loc_dist6_name: "Vigo Airport (VGO)",
       loc_dist6_val: "15 min by car",
+      map_location_name: "Casco Vello, Vigo (Galicia)",
+      map_btn_center: "📍 Recenter",
+      map_btn_gmaps: "Google Maps ↗",
       
       // Footer
       footer_desc: "Four curated apartments in the pedestrian heart of Vigo's historic quarter. Designed for travelers who appreciate quiet luxury, walkability, and cultural immersion.",
@@ -364,6 +374,141 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize language (default: Spanish or stored preference)
   const savedLang = localStorage.getItem('casco_vello_lang') || 'es';
   setLanguage(savedLang);
+
+  // ——— Interactive Leaflet Map ———
+  const mapContainer = document.getElementById('interactive-map');
+  let mapInstance = null;
+  const mainCoords = [42.2384, -8.7265];
+  const markers = {};
+
+  if (mapContainer && typeof L !== 'undefined') {
+    mapInstance = L.map('interactive-map', {
+      center: mainCoords,
+      zoom: 15,
+      scrollWheelZoom: false,
+      zoomControl: true
+    });
+
+    // Crisp high-resolution CartoDB Voyager tiles
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(mapInstance);
+
+    // Custom Icon Creators
+    const createCustomIcon = (iconText, isMain = false) => {
+      return L.divIcon({
+        className: 'custom-pin-wrapper',
+        html: `<div class="custom-pin ${isMain ? 'main-pin' : ''}">${iconText}</div>`,
+        iconSize: isMain ? [46, 46] : [38, 38],
+        iconAnchor: isMain ? [23, 23] : [19, 19],
+        popupAnchor: [0, -22]
+      });
+    };
+
+    // 1. Casco Vello Residences (Main Marker)
+    markers['casco-vello'] = L.marker(mainCoords, { icon: createCustomIcon('🏛️', true) })
+      .addTo(mapInstance)
+      .bindPopup(`
+        <div>
+          <div class="map-popup-title">Casco Vello Residences</div>
+          <div class="map-popup-sub">4 Apartamentos Exclusivos</div>
+          <div class="map-popup-desc">Ubicación peatonal histórica en Rúa de Pi y Margall / Praza da Constitución.</div>
+          <a href="#properties" class="map-popup-link">Ver Apartamentos ↓</a>
+        </div>
+      `);
+
+    // 2. Mercado da Pedra
+    markers['pedra'] = L.marker([42.2393, -8.7258], { icon: createCustomIcon('🐟') })
+      .addTo(mapInstance)
+      .bindPopup(`
+        <div>
+          <div class="map-popup-title">Mercado da Pedra</div>
+          <div class="map-popup-sub">2 min a pie (180 m)</div>
+          <div class="map-popup-desc">Famosa calle de las ostras y marisquerías tradicionales de la ría.</div>
+        </div>
+      `);
+
+    // 3. Calle del Príncipe
+    markers['principe'] = L.marker([42.2366, -8.7225], { icon: createCustomIcon('🛍️') })
+      .addTo(mapInstance)
+      .bindPopup(`
+        <div>
+          <div class="map-popup-title">Calle Príncipe</div>
+          <div class="map-popup-sub">4 min a pie (350 m)</div>
+          <div class="map-popup-desc">Principal arteria comercial peatonal y de ocio del centro de Vigo.</div>
+        </div>
+      `);
+
+    // 4. Puerto de Vigo / Ferry Cíes
+    markers['puerto'] = L.marker([42.2415, -8.7250], { icon: createCustomIcon('⛴️') })
+      .addTo(mapInstance)
+      .bindPopup(`
+        <div>
+          <div class="map-popup-title">Puerto & Ferry a Islas Cíes</div>
+          <div class="map-popup-sub">8 min a pie (650 m)</div>
+          <div class="map-popup-desc">Salida directa de barcos al Parque Nacional de las Islas Cíes y paseos náuticos.</div>
+        </div>
+      `);
+
+    // 5. Estación Vigo-Urzáiz
+    markers['estacion'] = L.marker([42.2335, -8.7145], { icon: createCustomIcon('🚄') })
+      .addTo(mapInstance)
+      .bindPopup(`
+        <div>
+          <div class="map-popup-title">Estación Vigo-Urzáiz</div>
+          <div class="map-popup-sub">10 min a pie (900 m)</div>
+          <div class="map-popup-desc">Conexión de Alta Velocidad (AVE / Alvia) y centro comercial Vialia.</div>
+        </div>
+      `);
+
+    // 6. Praia de Samil
+    markers['samil'] = L.marker([42.2085, -8.7735], { icon: createCustomIcon('🏖️') })
+      .addTo(mapInstance)
+      .bindPopup(`
+        <div>
+          <div class="map-popup-title">Praia de Samil</div>
+          <div class="map-popup-sub">12 min en coche</div>
+          <div class="map-popup-desc">La playa más emblemática de Vigo con paseo marítimo e increíbles vistas a las Cíes.</div>
+        </div>
+      `);
+
+    // Open main popup by default
+    markers['casco-vello'].openPopup();
+
+    // Recenter Button
+    const recenterBtn = document.getElementById('btn-recenter-map');
+    if (recenterBtn) {
+      recenterBtn.addEventListener('click', () => {
+        mapInstance.flyTo(mainCoords, 15, { duration: 1.2 });
+        markers['casco-vello'].openPopup();
+        document.querySelectorAll('.distance-item').forEach(item => item.classList.toggle('active', item.dataset.id === 'casco-vello'));
+      });
+    }
+
+    // Distance List Item Clicks -> Fly to Location
+    document.querySelectorAll('.distance-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const id = item.getAttribute('data-id');
+        const lat = parseFloat(item.getAttribute('data-lat'));
+        const lng = parseFloat(item.getAttribute('data-lng'));
+        const zoom = parseInt(item.getAttribute('data-zoom'), 10) || 16;
+
+        document.querySelectorAll('.distance-item').forEach(el => el.classList.remove('active'));
+        item.classList.add('active');
+
+        if (mapInstance && !isNaN(lat) && !isNaN(lng)) {
+          mapInstance.flyTo([lat, lng], zoom, { duration: 1.2 });
+          if (markers[id]) {
+            setTimeout(() => {
+              markers[id].openPopup();
+            }, 600);
+          }
+        }
+      });
+    });
+  }
 
   // ——— Booking Mask (Buchungsmaske) Logic ———
   const bookingForm = document.getElementById('hero-booking-form');
@@ -517,6 +662,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         revealObserver.unobserve(entry.target);
+        // Invalidate map size if map is in view
+        if (mapInstance) {
+          setTimeout(() => { mapInstance.invalidateSize(); }, 300);
+        }
       }
     });
   }, {

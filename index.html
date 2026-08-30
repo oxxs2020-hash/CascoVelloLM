@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
 </head>
@@ -469,58 +470,63 @@
         <p data-i18n="loc_desc">Situados en la zona histórica peatonal de Vigo, nuestros apartamentos se encuentran donde confluyen el patrimonio y la vida urbana contemporánea. Calles empedradas que llevan a terrazas acogedoras, mercados de marisco fresco y el paseo marítimo de la Ría de Vigo.</p>
 
         <div class="distance-list">
-          <div class="distance-item">
-            <span class="distance-icon">🏖️</span>
+          <div class="distance-item active" data-id="casco-vello" data-lat="42.2384" data-lng="-8.7265" data-zoom="16">
+            <span class="distance-icon">🏛️</span>
             <div class="distance-text">
-              <span class="place" data-i18n="loc_dist1_name">Praia de Samil (Playa)</span>
-              <span class="dist" data-i18n="loc_dist1_val">12 min en coche</span>
+              <span class="place" data-i18n="loc_dist0_name">Casco Vello Residences (Nuestros Alojamientos)</span>
+              <span class="dist" data-i18n="loc_dist0_val">Rúa de Pi y Margall / Praza</span>
             </div>
           </div>
-          <div class="distance-item">
-            <span class="distance-icon">🛍️</span>
-            <div class="distance-text">
-              <span class="place" data-i18n="loc_dist2_name">Calle Príncipe (zona comercial)</span>
-              <span class="dist" data-i18n="loc_dist2_val">4 min a pie</span>
-            </div>
-          </div>
-          <div class="distance-item">
+          <div class="distance-item" data-id="pedra" data-lat="42.2393" data-lng="-8.7258" data-zoom="17">
             <span class="distance-icon">🐟</span>
             <div class="distance-text">
               <span class="place" data-i18n="loc_dist3_name">Mercado da Pedra (ostras y marisco)</span>
               <span class="dist" data-i18n="loc_dist3_val">2 min a pie</span>
             </div>
           </div>
-          <div class="distance-item">
+          <div class="distance-item" data-id="principe" data-lat="42.2366" data-lng="-8.7225" data-zoom="16">
+            <span class="distance-icon">🛍️</span>
+            <div class="distance-text">
+              <span class="place" data-i18n="loc_dist2_name">Calle Príncipe (zona comercial)</span>
+              <span class="dist" data-i18n="loc_dist2_val">4 min a pie</span>
+            </div>
+          </div>
+          <div class="distance-item" data-id="puerto" data-lat="42.2415" data-lng="-8.7250" data-zoom="16">
             <span class="distance-icon">⛴️</span>
             <div class="distance-text">
               <span class="place" data-i18n="loc_dist4_name">Ferry a Islas Cíes (Puerto)</span>
               <span class="dist" data-i18n="loc_dist4_val">8 min a pie al puerto</span>
             </div>
           </div>
-          <div class="distance-item">
+          <div class="distance-item" data-id="estacion" data-lat="42.2335" data-lng="-8.7145" data-zoom="15">
             <span class="distance-icon">🚄</span>
             <div class="distance-text">
               <span class="place" data-i18n="loc_dist5_name">Estación de Tren Vigo-Urzáiz</span>
               <span class="dist" data-i18n="loc_dist5_val">10 min a pie</span>
             </div>
           </div>
-          <div class="distance-item">
-            <span class="distance-icon">✈️</span>
+          <div class="distance-item" data-id="samil" data-lat="42.2085" data-lng="-8.7735" data-zoom="13">
+            <span class="distance-icon">🏖️</span>
             <div class="distance-text">
-              <span class="place" data-i18n="loc_dist6_name">Aeropuerto de Vigo (VGO)</span>
-              <span class="dist" data-i18n="loc_dist6_val">15 min en coche</span>
+              <span class="place" data-i18n="loc_dist1_name">Praia de Samil (Playa)</span>
+              <span class="dist" data-i18n="loc_dist1_val">12 min en coche</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="map-wrapper reveal-right">
-        <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-8.7285%2C42.2348%2C-8.7195%2C42.2408&layer=mapnik&marker=42.2378%2C-8.7240"
-          allowfullscreen
-          loading="lazy"
-          title="Casco Vello ubicación"
-        ></iframe>
+      <div class="map-container-card reveal-right">
+        <div class="map-toolbar">
+          <div class="map-badge">
+            <span class="map-live-dot"></span>
+            <span data-i18n="map_location_name">Casco Vello, Vigo (Galicia)</span>
+          </div>
+          <div class="map-actions">
+            <button type="button" class="map-btn" id="btn-recenter-map" data-i18n="map_btn_center">📍 Centrar</button>
+            <a href="https://maps.google.com/?q=Casco+Vello+Vigo+Spain" target="_blank" rel="noopener noreferrer" class="map-btn map-btn-accent" data-i18n="map_btn_gmaps">Google Maps ↗</a>
+          </div>
+        </div>
+        <div id="interactive-map" class="interactive-map"></div>
       </div>
 
     </div>
@@ -627,6 +633,7 @@
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Volver arriba">↑</button>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
 </body>
 </html>
