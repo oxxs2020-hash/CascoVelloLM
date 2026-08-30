@@ -1553,6 +1553,42 @@ nav a:hover {
   z-index: 1;
 }
 
+/* OpenStreetMap Dark-Luxury Visual Styling */
+.interactive-map .leaflet-tile-pane {
+  filter: brightness(0.72) invert(1) contrast(1.22) hue-rotate(195deg) saturate(0.35) brightness(0.85);
+}
+
+.leaflet-control-zoom {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background: var(--surface-card) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--accent) !important;
+  color: #000000 !important;
+  border-color: var(--accent) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(14, 16, 22, 0.85) !important;
+  color: var(--text-dim) !important;
+  font-size: 0.65rem !important;
+  border-top-left-radius: 4px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--accent-muted) !important;
+  text-decoration: none;
+}
+
 /* Custom Leaflet Styling */
 .custom-pin {
   display: flex;
