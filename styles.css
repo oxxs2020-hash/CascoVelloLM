@@ -2361,66 +2361,9 @@ footer::before {
   transform: translateY(-2px);
 }
 
-/* 4. Skiper Mobile Floating Island Dock */
-.mobile-dock {
-  display: none;
-  position: fixed;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 32px);
-  max-width: 420px;
-  background: rgba(18, 20, 26, 0.88);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(212, 168, 83, 0.3);
-  border-radius: 100px;
-  padding: 8px 12px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 168, 83, 0.15);
-  z-index: 150;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.mobile-dock-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 50px;
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border);
-  transition: all var(--transition-fast);
-}
-
-.mobile-dock-btn.primary {
-  background: linear-gradient(135deg, #ff385c 0%, #e00b41 100%);
-  color: #ffffff;
-  border: none;
-  box-shadow: 0 4px 14px rgba(255, 56, 92, 0.4);
-  flex-grow: 1;
-  justify-content: center;
-}
-
-.mobile-dock-btn:active {
-  transform: scale(0.96);
-}
-
 @media (max-width: 768px) {
-  .mobile-dock {
-    display: flex;
-  }
   .back-to-top {
-    bottom: 84px;
-    right: 18px;
-  }
-  body {
-    padding-bottom: 70px;
+    bottom: 24px;
+    right: 20px;
   }
 }

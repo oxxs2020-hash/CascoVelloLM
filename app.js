@@ -456,12 +456,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-pressed', isActive);
     });
-
-    // Update mobile dock language label
-    const mobileLangLabel = document.querySelector('#mobile-lang-btn .lang-label');
-    if (mobileLangLabel) {
-      mobileLangLabel.textContent = lang === 'es' ? 'EN' : 'ES';
-    }
   }
 
   // Bind Language switcher buttons
@@ -472,16 +466,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setLanguage(selectedLang);
     });
   });
-
-  // Mobile dock language toggle
-  const mobileLangBtn = document.getElementById('mobile-lang-btn');
-  if (mobileLangBtn) {
-    mobileLangBtn.addEventListener('click', () => {
-      const currentLang = localStorage.getItem('casco_vello_lang') || 'es';
-      const nextLang = currentLang === 'es' ? 'en' : 'es';
-      setLanguage(nextLang);
-    });
-  }
 
   // Initialize language (default: Spanish or stored preference)
   const savedLang = localStorage.getItem('casco_vello_lang') || 'es';
@@ -883,6 +867,14 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.remove('active');
         nav.classList.remove('open');
       });
+    });
+
+    // Close on click outside nav
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        nav.classList.remove('open');
+      }
     });
   }
 
